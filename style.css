@@ -4,27 +4,27 @@ html{
 }
 
 body{
-
 	padding: 10px;
 	background-color: #B2B2B2;
-	width: 800px;
+	/*width: 800px;*/
+	width: 80%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 header{
-	background-color: #E9E3E6;	
-	padding: 5;
-	margin-bottom: 0px;
-	width: 800px;
+	background-color: #E9E3E6;
+	margin: auto;
+	/*padding: 5px;*/
+	/*margin-bottom: 0px;*/
+	/*	width: 800px;*/
 }
 header #htext{
-	
-	margin-top: 15px;
+
+	/*margin-top: 5px;*/
 	color: #736f72;
 	text-align: left;
 	float: left;
-	
 }
 header #htext h1, h2{
 	margin: 0;
@@ -36,11 +36,11 @@ header #htext h2{
 	font-size: 12px;
 }
 header img{
-	margin-right: 50px;
+	float: right;
+	margin-right: 5%;
 	padding: 5px;
 	clear: right;
 	width: 180px;
-	float: right;
 	border-radius: 50%;
     width: 80px;
     height: 80px;
@@ -80,7 +80,8 @@ nav li a:hover{
 
 /*sections*/
 section{
-	width: 600px;
+	/*width: 600px;*/
+	width: 75%;
 	float: left;
 	background-color: #E9E3E6;	
 	color: #736f72;
@@ -102,9 +103,11 @@ article a{
 }
 /*todo list on left*/
 #todo{
+
 	padding: 5px;
 	clear: right;
-	width: 180px;
+	width: 22%;
+	/*width: 180px;*/
 	float: right;
 	background-color: #E9E3E6;	
 	color: #736f72; 
@@ -131,3 +134,4 @@ footer hr{
     height: 1px;
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
 }
+
