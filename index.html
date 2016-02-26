@@ -1,63 +1,198 @@
-<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<!-- Enable IE9 Standards mode -->
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		
-		<link rel="stylesheet" type="text/css" href="style.css">
-		
-		<title>Carlos, your developer</title>
-	</head>
 
-	<body>
-		<header>
-			<div id="htext">
-				<h1>Hello, my name is Carlos.</h1>
-				<h2>Im a developer from Porto, Portugal.</h2>
-			</div>
-			<img src="carlos.jpg">
-		</header>
-		
-		<nav>
-			<li><a href="#">Start</a></li>
-			<li><a href="#"><span>Portfolio</span></a></li>
-			<li><a href="#"><span>About</span></a></li>
-			<li><a href="#"><span>Contact</span></a></li>
-		</nav>
+<head>
+  <!-- It must be made list 
+	+take some pictures
+	+drink more coffe
+-->
 
-		<section>
-			<article>
-			<h5>28-01-2016</h5>
-				<p>Im going to use this space as my web lab, where ill try to learn and share my developments with you.
-				You can follow my <a href="https://twitter.com/socarlosb">tweets</a> for a faster update.
-				I'll start slowly, so expect more as time goes by...</p>
-				<p>Right now I have to go to work, so I'll continue my devs tomorrow!</p>
-			</article>
+  <!-- meta data -->
+  <meta name="keywords" content="HTML, CSS, JavaScript, jQuery, developer, web">
+  <meta name="description" content="socarlosb Web Lab">
+  <meta charset="UTF-8">
+  <meta name="author" content="socarlosb">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-			<article>
-				<h5>30-01-2016</h5>
-				<p>Started learning Ruby at codecademy a few days ago, it's quite a simple sintaxe. But, as with all programming language, you can complicate it alot if you try to something that works for all the users.</p>
-				<p>Since i'm using twitter, as a journal, I think ill make an app for it.</p>
-				<p>I have alot of ideas for apps, but I can't make them all at the same time. So... I'll try to make a list of them and link them to git repositories as they are made/open.</p>
-			</article>
-		</section>
+  <!-- personal css files references -->
+	<link rel="stylesheet" href="style.css">
+  <!-- Google API Fonts-->
+  <link href='https://fonts.googleapis.com/css?family=Fresca' rel='stylesheet' type='text/css'>
+  <!-- Libraries -->
+  <!-- Font Awesome Icons library -->
+  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-		<div id="todo">
-			<h3>To Do list:</h3>
-			<li id="done">Review html5 tags</li>
-			<li id="done">Review CSS, make this nicer pls</li>
-			<li>Add more content</li>
-			<li id="done">Start CodeAcademy</li>
-			<li>Create StackOverFlow account</li>
-			<li>Start wit CSS3 Bootstrap</li>
-		</div>	
-		
+  <title>socarlosb Web Lab</title>
+</head>
 
-		<footer>
-			<hr>
-			Copyright &copy; 2016 Carlos Barbosa.
-		</footer>
+<body data-spy="scroll" data-target=".navbar" data-offset="40">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xs-12">
 
-	</body>
-</html>
+        <!-- top navigation bar -->
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+          <div class="navbar-header">
+
+            <!-- Collapsing The Navigation Bar -->
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+	       				 		<span class="icon-bar"></span>
+	        					<span class="icon-bar"></span>
+					        	<span class="icon-bar"></span> 
+					    	</button>
+
+            <a class="navbar-brand" href="#">socarlosb</a>
+          </div>
+
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#hi"><i class="fa fa-home fa-fw"></i> Hi :)</a></li>
+              <li><a href="#knowme">Know me</a></li>
+              <li><a href="#seeme">See me</a></li>
+              <li><a href="#callme">Call me</a></li>
+            </ul>
+          </div>
+        </nav>
+        <!-- Hi:) division -->
+        <div id="hi" class="container-fluid text-center ">
+
+          <h1>Hi and welcome to <strong>socarlosb</strong>'web lab</h1>
+          <br>
+          <h2>Want to know me?</h2>
+          <h5><i>(There will be an amazing picture here someday)</i></h5>
+          <br>
+          <p><a class="btn btn-primary btn-lg" href="#knowme" role="button">Click here :)</a></p>
+
+        </div>
+        <!-- know me division -->
+        <div id="knowme" class="container-fluid">
+          <h1 class="text-center">Want to <b>know me</b>?</h1>
+
+          <div class="col-xs-12 text-center">
+            <br>
+            <img src="https://avatars3.githubusercontent.com/u/16838793?v=3&s=460" class="img-responsive img-circle" style="width:175px">
+            <br>
+            <div class="row">
+              <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1 text-justify">
+                <h2>Me</h2>
+                <p>I'm an, almost self taught, developer from Porto, Portugal, with a degree in multimedia engineering!</p>
+                <p>I love solving problems and make other peoples life better.</p>
+                <p>I read, watch movies, play games, run, jump, swimm, go out with friends, yep... still human!</p>
+                <br>
+                <blockquote class="blockquote-reverse">
+                  <p>“Beauty lies in the eyes of the beholder”</p>
+                  <p><small>Plato</small></p>
+                </blockquote>
+              </div>
+              <div class="col-sm-4 col-xs-10 col-xs-offset-1 col-sm-offset-2 text-left">
+                <h2>My Toolbox <small>for now...</small></h2>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped" aria-valuemax="100" style="width:90%">
+                    HTML + CSS
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-success progress-bar-striped" aria-valuemax="100" style="width:60%">
+                    JAVASCRIPT + JQUERY
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" aria-valuemax="100" style="width:50%">
+                    SEO
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" aria-valuemax="100" style="width:70%">
+                    PHOTOSHOP
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" aria-valuemax="100" style="width:90%">
+                    VBSRIPT + VB.NET + C#
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" aria-valuemax="100" style="width:80%">
+                    SQL
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" aria-valuemax="100" style="width:80%">
+                    ACTION SCRIPT + UNITY 3D
+                  </div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-info" aria-valuemax="100" style="width:80%">
+                    CMS WORDPRESS + CMS MOODLE
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- see me division -->
+        <div id="seeme" class="container-fluid text-center">
+          <h1>Where can you <b>see me</b>?</h1>
+          <br>
+          <p>You can see me on <a href="#callme">several online platforms</a>, but here I'll put some of the most challenging works that I have done.</p>
+          <h2><small>(In construction)</small></h2>
+          <br>
+          <div class="row ">
+            <div class="col-sm-4 col-xs-12 col-md-4">
+              <a href="#" target="_blank" class="thumbnail">
+                <img class="img-responsive" src="https://i.ytimg.com/vi/x3Hc-U-D858/hqdefault.jpg" alt="In construction">
+              </a>
+            </div>
+            <div class="col-sm-4 col-xs-12 col-md-4">
+              <a href="#" target="_blank" class="thumbnail">
+                <img class=" img-responsive" src="https://i.ytimg.com/vi/x3Hc-U-D858/hqdefault.jpg" alt="In construction">
+              </a>
+            </div>
+            <div class="col-sm-4  col-xs-12 col-md-4 ">
+              <a href="#" target="_blank" class="thumbnail">
+                <img class=" img-responsive" src="https://i.ytimg.com/vi/x3Hc-U-D858/hqdefault.jpg" alt="In construction">
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- call me division -->
+        <div id="callme" class="container-fluid text-center">
+          <h1>How can you <b>call me</b>?</h1>
+          <br>
+          <p>You can contact me online in many ways, in social platforms (here's just some of them):</p>
+          <br>
+          <p><a href="https://twitter.com/socarlosb" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></p>
+          <p><a href="https://www.linkedin.com/in/socarlosb" target="_blank"><i class="fa fa-linkedin"></i> LinkedIn</a></p>
+          <p><a href="https://github.com/socarlosb" target="_blank"><i class="fa fa-github"></i> Github</a></p>
+          <p><a href="http://codepen.io/socarlosb/" target="_blank"><i class="fa fa-codepen"></i> CodePen</a></p>
+          <p><a href="http://www.freecodecamp.com/socarlosb" target="_blank"><i class="fa fa-fire"></i> freeCodeCamp</a></p>
+          <br></br>
+          <p>Or you can just send me a direct mail to socarlosb(at)gmail(dot)com</p>
+          <br>
+          <p>You can buy me a <i class="fa fa-coffee"></i> and we can talk!</p>
+        </div>
+
+        <!-- footer division -->
+        <footer class="text-center">
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br> Copyright &copy; 2016 socarlosb. All Rights Reserved
+        </footer>
+
+      </div>
+    </div>
+  </div>
+</body>

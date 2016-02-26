@@ -1,137 +1,65 @@
-html{
-	background-color: #736f72;
-	font: 12px/1.5 'segoe ui', 'lucida sans unicode', 'lucida grande', lucida, sans-serif;
+* {
+  font-family: 'Fresca', sans-serif;
 }
 
-body{
-	padding: 10px;
-	background-color: #B2B2B2;
-	/*width: 800px;*/
-	width: 80%;
-	margin-left: auto;
-	margin-right: auto;
+#hi {
+  padding-top: 300px;
+  height: 900px;
+  color: #fff;
+  background-color: #1E88E5;
 }
 
-header{
-	background-color: #E9E3E6;
-	margin: auto;
-	/*padding: 5px;*/
-	/*margin-bottom: 0px;*/
-	/*	width: 800px;*/
-}
-header #htext{
-
-	/*margin-top: 5px;*/
-	color: #736f72;
-	text-align: left;
-	float: left;
-}
-header #htext h1, h2{
-	margin: 0;
-	margin-left: 50px;
-}
-header #htext h2{
-	margin-left: 125px;
-	font-style: italic;
-	font-size: 12px;
-}
-header img{
-	float: right;
-	margin-right: 5%;
-	padding: 5px;
-	clear: right;
-	width: 180px;
-	border-radius: 50%;
-    width: 80px;
-    height: 80px;
- }
-
-
-/* nav bar */
-nav{
-	margin-bottom: 5px;
-	margin-top: 5px;
-	background-color: #B2B2B2;	
-	color: #736f72;
-	display: table;
-	width: 100%;
-	border-collapse: collapse;
-	border: none;
-	text-align: center;
-}
-nav ul{
-	display: table-row;
-
-}
-nav li{
-	display: table-cell;
-	margin: 0;
-}
-nav li a{
-	text-decoration: none;
-	padding: .2em 1em;
-	color: #E9E3E6;
-	/*background-color: #736f72;*/
-}
-nav li a:hover{
-	color: #736f72;
-	/*background-color: #9A8F97;*/
+#knowme {
+  padding-top: 40px;
+  height: 900px;
+  color: #fff;
+  background-color: #673ab7;
 }
 
-/*sections*/
-section{
-	/*width: 600px;*/
-	width: 75%;
-	float: left;
-	background-color: #E9E3E6;	
-	color: #736f72;
-}
-article{
-	margin: 5px;
-	
-	background-color: #C3BABA;
-	padding: 0px 5px 5px;
-}
-article h5{
-	margin: 10px;
-	text-align: right;
-}
-article a{
-	text-decoration: none;
-	color: #736f72;
-	font-weight: bold;
-}
-/*todo list on left*/
-#todo{
-
-	padding: 5px;
-	clear: right;
-	width: 22%;
-	/*width: 180px;*/
-	float: right;
-	background-color: #E9E3E6;	
-	color: #736f72; 
-}
-#todo li{
-	list-style-type: circle
-}
-#todo #done{
-	text-decoration: line-through;
-}
-#todo h3{
-	margin: 0;
+#seeme {
+  padding-top: 40px;
+  height: 700px;
+  color: #fff;
+  background-color: #ff9800;
 }
 
-footer{
-	padding: 10px;
-	font-size: 10px;
-	text-align: center;
-	clear: both;
+#callme {
+  padding-top: 40px;
+  height: 700px;
+  color: #fff;
+  background-color: #00bcd4;
 }
 
-footer hr{
-	border: 0;
-    height: 1px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+footer {
+  padding-top: 40px;
+  height: 200px;
 }
 
+p {
+  font-size: 20px;
+}
+
+.img-responsive {
+  margin: 0 auto;
+}
+
+p a {
+  color: #fff;
+}
+
+
+/* responsive text queries */
+
+@media screen and (max-width: 768px) {}
+
+@media screen and (max-width: 544px) {
+  p {
+    font-size: 90%;
+  }
+  #knowme {
+    height: 1100px;
+  }
+  #seeme {
+    height: 1300px;
+  }
+}
