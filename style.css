@@ -18,7 +18,7 @@
 
 #seeme {
   padding-top: 40px;
-  height: 800px;
+  height: 700px;
   color: #fff;
   background-color: #ff9800;
 }
@@ -63,6 +63,6 @@ p a {
     height: 1100px;
   }
   #seeme {
-    height: 1400px;
+    height: 1300px;
   }
 }
