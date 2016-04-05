@@ -71,7 +71,7 @@
 			"file": "index.html",
 			"settings":
 			{
-				"buffer_size": 2777,
+				"buffer_size": 8955,
 				"line_ending": "Windows"
 			}
 		},
@@ -79,7 +79,7 @@
 			"file": "style.css",
 			"settings":
 			{
-				"buffer_size": 40,
+				"buffer_size": 773,
 				"line_ending": "Windows"
 			}
 		},
@@ -205,7 +205,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2777,
+						"buffer_size": 8955,
 						"regions":
 						{
 						},
@@ -213,7 +213,7 @@
 						[
 							[
 								0,
-								2777
+								0
 							]
 						],
 						"settings":
@@ -234,15 +234,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 40,
+						"buffer_size": 773,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								40,
-								40
+								0,
+								0
 							]
 						],
 						"settings":
