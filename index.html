@@ -1,11 +1,5 @@
 <html lang="en">
-
 <head>
-  <!-- It must be made list 
-	+take some pictures
-	+drink more coffe
--->
-
   <!-- meta data -->
   <meta name="keywords" content="HTML, CSS, JavaScript, jQuery, developer, web">
   <meta name="description" content="socarlosb Web Lab">
@@ -14,7 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- personal css files references -->
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
   <!-- Google API Fonts-->
   <link href='https://fonts.googleapis.com/css?family=Fresca' rel='stylesheet' type='text/css'>
   <!-- Libraries -->
@@ -27,7 +22,7 @@
   <!-- Latest compiled JavaScript -->
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 
-  <title>socarlosb Web Lab</title>
+  <title>socarlosb developer Web Lab</title>
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40">
@@ -42,41 +37,40 @@
 
             <!-- Collapsing The Navigation Bar -->
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-	       				 		<span class="icon-bar"></span>
-	        					<span class="icon-bar"></span>
-					        	<span class="icon-bar"></span> 
+	       				 		<span><i class="fa fa-bars" aria-hidden="true"></i></span>
+	        					 
 					    	</button>
 
-            <a class="navbar-brand" href="#">socarlosb</a>
+            <a class="navbar-brand" href="#">socarlosb developer</a>
           </div>
 
           <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav navbar-right">
-              <li><a href="#hi"><i class="fa fa-home fa-fw"></i> Hi :)</a></li>
-              <li><a href="#knowme">Know me</a></li>
-              <li><a href="#seeme">See me</a></li>
-              <li><a href="#callme">Call me</a></li>
+            <ul id ="nav" class="nav navbar-nav navbar-right">
+              <li><a href="#home"><i class="fa fa-home fa-fw"></i> Home</a></li>
+              <li><a href="#about"><i class="fa fa-info" aria-hidden="true"></i> About me</a></li>
+              <li><a href="#portfolio"><i class="fa fa-code" aria-hidden="true"></i> Portfolio</a></li>
+              <li><a href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i> Contact me</a></li>
             </ul>
           </div>
         </nav>
         <!-- Hi:) division -->
-        <div id="hi" class="container-fluid text-center ">
+        <div id="home" class="container-fluid text-center ">
 
-          <h1>Hi and welcome to <strong>socarlosb</strong>'web lab</h1>
+          <h1>Hi and welcome to <strong>socarlosb developer</strong>'web lab</h1>
           <br>
-          <h2>Want to know me?</h2>
+          <h2>Check my portfolio</h2>
           <h5><i>(There will be an amazing picture here someday)</i></h5>
           <br>
-          <p><a class="btn btn-primary btn-lg" href="#knowme" role="button">Click here :)</a></p>
+          <p><a class="btn btn-primary btn-lg" href="#about" role="button">Click here :)</a></p>
 
         </div>
         <!-- know me division -->
-        <div id="knowme" class="container-fluid">
-          <h1 class="text-center">Want to <b>know me</b>?</h1>
+        <div id="about" class="container-fluid">
+          <h1 class="text-center">Want to know <b>about me</b>?</h1>
 
           <div class="col-xs-12 text-center">
             <br>
-            <img src="img/socarlosb.jpg" class="img-responsive img-circle" style="width:175px">
+            <img src="https://avatars3.githubusercontent.com/u/16838793?v=3&s=460" class="img-responsive img-circle" style="width:175px">
             <br>
             <div class="row">
               <div class="col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-1 text-justify">
@@ -138,16 +132,16 @@
         </div>
 
         <!-- see me division -->
-        <div id="seeme" class="container-fluid text-center">
-          <h1>Where can you <b>see me</b>?</h1>
+        <div id="portfolio" class="container-fluid text-center">
+          <h1>Where can you see my <b>work</b>?</h1>
           <br>
-          <p>You can see me on <a href="#callme">several online platforms</a>, but here I'll put some of my works that I have done so far.</p>
+          <p>You can see me on <a href="#contact">several online platforms</a>, but here I'll put some of the work that I have done so far.</p>
           <h2><small>(In construction)</small></h2>
           <br>
           <div class="row ">
             <div class="col-sm-4 col-xs-12 col-md-4 portfolio-item">
               <a href="http://codepen.io/socarlosb/full/MygmxE/" target="_blank" class="thumbnail">
-                <img class="img-responsive" src="img/alvaroCunhal.jpg" alt="Álvaro Cunhal Tribute">
+                <img class="img-responsive" src="https://github.com/socarlosb/socarlosb.github.io/blob/master/img/tribute.png?raw=true" alt="Álvaro Cunhal Tribute">
               </a>
               <div class=" portfolio-caption ">
                 <h5>Álvaro Cunhal Tribute (HTML + CSS Bootstrap)</h5>
@@ -156,18 +150,29 @@
 
             <div class="col-sm-4 col-xs-12 col-md-4 portfolio-item">
               <a href="http://codepen.io/socarlosb/full/qZWjaw/" target="_blank" class="thumbnail">
-                <img class="img-responsive" src="img/portefolio.jpg" alt="socarlosb Web Lab">
+                <img class="img-responsive" src="https://github.com/socarlosb/socarlosb.github.io/blob/master/img/portfolio.png?raw=true" alt="socarlosb Web Lab">
               </a>
               <div class=" portfolio-caption ">
-                <h5>This Portefolio page (HTML + CSS Bootstrap)</h5>
+                <h5>My First Portfolio version (HTML + CSS Bootstrap)</h5>
               </div>
             </div>
             
+         
+                        <div class="col-sm-4 col-xs-12 col-md-4 ">
+              <a href="http://codepen.io/socarlosb/full/jAkyoE/" target="_blank " class="thumbnail ">
+                <img class=" img-responsive " src="https://github.com/socarlosb/socarlosb.github.io/blob/master/img/tribute_v2.png?raw=true " alt="Tim Berners-Lee Tribute"> </a>
+<div class=" portfolio-caption ">
+                <h5>Tim Berners-Lee Tribute (HTML + CSS Bootstrap)</h5>
+   </div>
+            </div>
             
             <div class="col-sm-4 col-xs-12 col-md-4 ">
-              <a href="# " target="_blank " class="thumbnail ">
-                <img class=" img-responsive " src="https://i.ytimg.com/vi/x3Hc-U-D858/hqdefault.jpg " alt="In construction ">
-              </a>
+              <a href="#" target="_blank " class="thumbnail ">
+                <img class=" img-responsive " src="https://github.com/socarlosb/socarlosb.github.io/blob/master/img/In_construction.png?raw=true " alt="In construction "> </a>
+<div class=" portfolio-caption ">
+                <h5>I will add more here!</h5>
+   </div>
+             
             </div>
 
           </div>
@@ -175,34 +180,28 @@
         </div>
 
         <!-- call me division -->
-        <div id="callme" class="container-fluid text-center ">
-          <h1>How can you <b>call me</b>?</h1>
+        <div id="contact" class="container-fluid text-center ">
+          <h1>How can you <b>contact me</b>?</h1>
           <br>
           <p>You can contact me online in many ways, in social platforms (here's just some of them):</p>
-	  <br>
-          <p><a href="https://twitter.com/socarlosb " target="_blank "><i class="fa fa-twitter "></i> Twitter</a></p>
-          <p><a href="https://www.linkedin.com/in/socarlosb " target="_blank "><i class="fa fa-linkedin "></i> LinkedIn</a></p>
-          <p><a href="https://github.com/socarlosb " target="_blank "><i class="fa fa-github "></i> Github</a></p>
-          <p><a href="http://codepen.io/socarlosb/ " target="_blank "><i class=" fa fa-codepen "></i> CodePen</a></p>
-          <p><a href="http://www.freecodecamp.com/socarlosb " target="_blank "><i class="fa fa-fire "></i> freeCodeCamp</a></p>
+          <br>
+          <p><a class="social" href="https://twitter.com/socarlosb " target="_blank "><i class="fa fa-twitter "></i> Twitter</a></p>
+          <p><a class="social" href="https://www.linkedin.com/in/socarlosb " target="_blank "><i class="fa fa-linkedin "></i> LinkedIn</a></p>
+          <p><a class="social" href="https://github.com/socarlosb " target="_blank "><i class="fa fa-github "></i> Github</a></p>
+          <p><a class="social" href="http://codepen.io/socarlosb/ " target="_blank "><i class=" fa fa-codepen "></i> CodePen</a></p>
+          <p><a class="social" href="http://www.freecodecamp.com/socarlosb " target="_blank "><i class="fa fa-fire "></i> freeCodeCamp</a></p>
           <br></br>
           <p>Or you can just send me a direct mail to socarlosb(at)gmail(dot)com</p>
-          <p>If you need, here is my <a href="https://drive.google.com/file/d/0B1TMDx7d6WQ-UklFRzQwMVZPczA/view?usp=drivesdk" target="_blank">Europass CV</a>, simple for now..</p>
           <br>
           <p>You can buy me a <i class="fa fa-coffee "></i> and we can talk!</p>
         </div>
 
         <!-- footer division -->
         <footer class="text-center ">
-          <br>
-          <br>
-          <br>
-          <br>
-          <br>
-          <br> Copyright &copy; 2016 socarlosb. All Rights Reserved
+         <em>Made with <i class="fa fa-heart"></i> and <i class="fa fa-coffee" aria-hidden="true"></i> by  <a href="http://twitter.com/socarlosb">@socarlosb</a> 2016. All Rights Reserved</em>
         </footer>
-
       </div>
     </div>
   </div>
 </body>
+</html>
