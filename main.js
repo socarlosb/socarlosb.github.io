@@ -1,8 +1,13 @@
 
-var myLink = document.getElementById('xmlSend');
+var xmlSend = document.getElementById('xmlSend');
 var strResult = document.getElementById('strResult');
+// var myConn = "http://192.168.0.45:9876/IM/";
+var myConn = "http://192.168.1.247:9876/IM/";
+
 
 xmlSend.onclick = function(){
+
+//function sendXml(){
   // create the xml
   var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Version=\"1.0\">\
     <mmi:startRequest mmi:source=\"TOUCH\" mmi:target=\"IM\" mmi:requestId=\"touch-id-1\" mmi:context=\"1\">\
@@ -14,7 +19,7 @@ xmlSend.onclick = function(){
         </emma:emma>\
       </mmi:data>\
     </mmi:startRequest>\
-  </mmi:mmi>"
+  </mmi:mmi>";
 
 
   // function reqListener () {
@@ -31,8 +36,8 @@ xmlSend.onclick = function(){
   //oReq.addEventListener("load", reqListener);
   //console.log(oReq.open("GET", "http://localhost:9876/IM/"));
   //oReq.onload = console.log("ok");
-  oReq.open("POST", "http://localhost:9876/IM/");
-  oReq.open("POST", "http://192.168.0.45:9876/IM/");
+  //oReq.open("POST", "http://localhost:9876/IM/");
+  oReq.open("POST", myConn);
   oReq.send(msg);
   //strResult.innerHTML = "E.T. phoned home!";
 
@@ -42,4 +47,5 @@ xmlSend.onclick = function(){
   // xmlhttp.open("POST","http://localhost:9876/IM/",true);
   // send xml data
   // xmlhttp.send(escape(msg));
+
 }
