@@ -6,7 +6,7 @@ var myConn = "http://192.168.1.247:9876/IM/";
 
 
 xmlSend.onclick = function(){
-
+alert("test");
 //function sendXml(){
   // create the xml
   var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Version=\"1.0\">\
