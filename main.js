@@ -27,7 +27,7 @@ var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Versi
    if ("withCredentials" in xhr) {
      // XHR for Chrome/Firefox/Opera/Safari.
      console.log("credencials for chrom, firefox, opera, safari ok");
-     alert("credencials for chrom, firefox, opera, safari ok");
+    //  alert("credencials for chrom, firefox, opera, safari ok");
      xhr.open(method, url, true);
    } else if (typeof XDomainRequest != "undefined") {
      console.log("request for ie");
@@ -37,11 +37,11 @@ var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Versi
    } else {
      // CORS not supported.
      console.log("cors not supported");
-     alert("cors not supported");
+    //  alert("cors not supported");
      xhr = null;
    }
    console.log("xhr : "+xhr);
-   alert("xhr : "+xhr);
+  //  alert("xhr : "+xhr);
    return xhr;
  }
 
@@ -55,7 +55,7 @@ var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Versi
  function makeCorsRequest() {
    // This is a sample server that supports CORS.
   //  var url = 'http://html5rocks-cors.s3-website-us-east-1.amazonaws.com/index.html';
-  alert("mobile is here");
+  // alert("mobile is here");
   //  var xhr = createCORSRequest('GET', url);
      var xhr = createCORSRequest('POST', url);
    if (!xhr) {
@@ -71,7 +71,7 @@ var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Versi
     //  var title = getTitle(text);
     //  alert('Response from CORS request to ' + url + ': ' + title);
      console.log('Response from CORS request to ' + url);// + ': ' + title);
-     alert('Response from CORS request to ' + url);
+    //  alert('Response from CORS request to ' + url);
    };
 
    xhr.onerror = function() {
@@ -99,7 +99,7 @@ xmlSend.onclick = function(){
 
 // createCORSRequest("POST",myConn );
 makeCorsRequest();
-alert("after function?");
+// alert("after function?");
 
   // function reqListener () {
   //   console.log(this.responseText);
