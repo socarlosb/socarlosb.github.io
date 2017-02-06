@@ -27,6 +27,7 @@ var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Versi
    if ("withCredentials" in xhr) {
      // XHR for Chrome/Firefox/Opera/Safari.
      console.log("credencials for chrom, firefox, opera, safari ok");
+     alert("credencials for chrom, firefox, opera, safari ok");
      xhr.open(method, url, true);
    } else if (typeof XDomainRequest != "undefined") {
      console.log("request for ie");
@@ -36,9 +37,11 @@ var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Versi
    } else {
      // CORS not supported.
      console.log("cors not supported");
+     alert("cors not supported");
      xhr = null;
    }
    console.log("xhr : "+xhr);
+   alert("xhr : "+xhr);
    return xhr;
  }
 
