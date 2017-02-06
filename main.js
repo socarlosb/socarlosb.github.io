@@ -96,6 +96,7 @@ xmlSend.onclick = function(){
 
 // createCORSRequest("POST",myConn );
 makeCorsRequest();
+alert("after function?");
 
   // function reqListener () {
   //   console.log(this.responseText);
