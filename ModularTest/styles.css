@@ -1,0 +1,37 @@
+.wrapper{
+  text-align: center;
+  background-color: #fff;
+  font-family: monospace;
+}
+button {
+  color: #fff;
+  border-radius: 25px;
+  width: 150px;
+  height: 100px;
+  font-family: monospace;
+  font-size: 50px;
+}
+#button1 {
+  background-color: #008744;
+}
+#button2 {
+  background-color: #0057e7;
+}
+#button3 {
+  background-color: #d62d20;
+}
+#response {
+  background-color: #ffa700;
+}
+p{
+  font-size: 20px;
+}
+@media only screen and (min-width: 400px) {
+  h1, h2, p{
+    font-size: 50px;
+  }
+  button{
+    width: 80%;
+    margin-top: 20px;
+  }
+}
