@@ -87,7 +87,7 @@ var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Versi
 
 xmlSend.onclick = function(){
   // alert test to see if the button works on android chrome (it works)
-  // alert("test");
+   alert("button works? test");
   //function sendXml(){
 
 
