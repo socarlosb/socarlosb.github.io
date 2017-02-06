@@ -1,3 +1,9 @@
+var response = document.getElementById('response');
+function logger (t){
+  response.innerHTML = response.innerHTML + "\n" +  t;
+};
+
+// response.innerHTML =
 // from https://www.html5rocks.com/en/tutorials/cors/
 
 // Create the XHR object.
@@ -23,27 +29,28 @@ function getTitle(text) {
 }
 
 // Make the actual CORS request.
-function makeCorsRequest() {
+function makeCorsRequest(msg) {
   // This is a sample server that supports CORS.
   // var url = 'http://html5rocks-cors.s3-website-us-east-1.amazonaws.com/index.html';
   // commented to use url from vars.js
 
-  var xhr = createCORSRequest('GET', url);
+  // var xhr = createCORSRequest('GET', url);
+  var xhr = createCORSRequest('POST', url);
   if (!xhr) {
-    alert('CORS not supported');
+    logger('CORS not supported');
     return;
   }
 
   // Response handlers.
   xhr.onload = function() {
     var text = xhr.responseText;
-    var title = getTitle(text);
-    alert('Response from CORS request to ' + url + ': ' + title);
+    // var title = getTitle(text);
+    logger('Response from CORS request to ' + url);// + ': ' + title);
   };
 
   xhr.onerror = function() {
-    alert('Woops, there was an error making the request.');
+    logger('Woops, there was an error making the request.');
   };
 
-  xhr.send();
+  xhr.send(msg);
 }
