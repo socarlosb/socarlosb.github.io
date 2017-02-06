@@ -52,7 +52,7 @@ var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Versi
  function makeCorsRequest() {
    // This is a sample server that supports CORS.
   //  var url = 'http://html5rocks-cors.s3-website-us-east-1.amazonaws.com/index.html';
-
+  alert("mobile is here");
   //  var xhr = createCORSRequest('GET', url);
      var xhr = createCORSRequest('POST', url);
    if (!xhr) {
