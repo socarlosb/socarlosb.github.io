@@ -1,13 +1,14 @@
 
 var xmlSend = document.getElementById('xmlSend');
 var strResult = document.getElementById('strResult');
-// var myConn = "http://192.168.0.45:9876/IM/";
-var myConn = "http://192.168.1.247:9876/IM/";
+var myConn = "http://192.168.0.45:9876/IM/";
+// var myConn = "http://192.168.1.247:9876/IM/";
 
 
 xmlSend.onclick = function(){
-alert("test");
-//function sendXml(){
+  // alert test to see if the button works on android chrome (it works)
+  // alert("test");
+  //function sendXml(){
   // create the xml
   var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Version=\"1.0\">\
     <mmi:startRequest mmi:source=\"TOUCH\" mmi:target=\"IM\" mmi:requestId=\"touch-id-1\" mmi:context=\"1\">\
