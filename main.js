@@ -68,6 +68,7 @@ var msg=""+ "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Versi
     //  var title = getTitle(text);
     //  alert('Response from CORS request to ' + url + ': ' + title);
      console.log('Response from CORS request to ' + url);// + ': ' + title);
+     alert('Response from CORS request to ' + url);
    };
 
    xhr.onerror = function() {
