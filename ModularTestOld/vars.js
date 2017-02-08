@@ -1,5 +1,7 @@
 // vars
-var url = "http://192.168.0.45:9876/IM/";
+var url = "http://localhost:8000/IM/";
+var url2 = "http://localhost:9876/IM/";
+var url3 = "http://localhost:8801/IM?GUI"; // get response
 
 // vars xml
 var xmlT1 = "" + "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Version=\"1.0\">\

@@ -4,11 +4,14 @@ var button2 = document.getElementById('button2');
 var button3 = document.getElementById('button3');
 
 button1.onclick = function(){
-  makeCorsRequest(xmlT1);
+  sendXML(xmlT1);
+  getResp();
 }
 button2.onclick = function(){
-  makeCorsRequest(xmlT2);
+  sendXML(xmlT2);
+  getResp();
 }
 button3.onclick = function(){
-  makeCorsRequest(xmlTTest);
+  sendXML(xmlTTest);
+  getResp();
 }
