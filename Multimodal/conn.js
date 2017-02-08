@@ -1,8 +1,10 @@
 // connections file
 
 // connection vars
+// var ImAddress = "http://localhost:8000/IM/";
 // var ImAddress2 = "http://localhost:9876/IM/";
 // var ImGetAddress = "http://localhost:8801/IM?GUI";
+var ImAddress = "http://192.168.0.45:8000/IM/";
 var ImAddress2 = "http://192.168.0.45:9876/IM/";
 var ImGetAddress = "http://192.168.0.45:8801/IM?GUI";
 
@@ -13,13 +15,31 @@ function sendXml (xml){
 
   sender.onreadystatechange = function(){
     if(sender.readyState == 4 && sender.status == 200){
-      resUpdate('send: '+ sender.response);
-      // console.log('send: '+ sender.response);
+      // resUpdate('send: '+ sender.response);
+      console.log('send response: '+ sender.response);
     }
   }
 
   sender.open('POST', ImAddress2, true);
   sender.send(xml);
+  // resUpdate('send: '+ sender.response);
+}
+
+// connection to send xml test
+function sendXmlTest (xml){
+
+  var sender = new XMLHttpRequest();
+
+  sender.onreadystatechange = function(){
+    if(sender.readyState == 4 && sender.status == 200){
+      // resUpdate('send: '+ sender.response);
+      console.log('send response: '+ sender.response);
+    }
+  }
+
+  sender.open('POST', ImAddress, true);
+  sender.send(xml);
+  console.log(sender);
   // resUpdate('send: '+ sender.response);
 }
 
@@ -30,14 +50,15 @@ function getXml (){
 
   getter.onreadystatechange = function(){
     if(getter.readyState == 4 && getter.status == 200){
+
       // resUpdate('get: '+ getter);
       // console.log('get: '+ getter.response);
-
+      //
       parser = new DOMParser();
       var xml = parser.parseFromString(getter.response, "text/xml");
 
       // console.log('comando: ' + getCommand(xml));
-      resUpdate('comando: ' + getCommand(xml));
+      resUpdate(getCommand(xml));
       getter.abort();
     }
   }
@@ -51,6 +72,7 @@ function getXml (){
 // get the result command from xml received
 
 function getCommand(xml){
-  var result = $(xml).find("command").text();
+  var result = $(xml).find("emma").text();
+  console.log(result);
   return result;
 }

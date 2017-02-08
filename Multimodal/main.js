@@ -19,7 +19,7 @@ buttonT2.onclick = function(){
 };
 buttonTTest.onclick = function(){
   // send "Mensagem de teste"
-  sendXml(xmlMaker("Mensagem de teste"));
+  sendXmlTest(xmlTest("Mensagem de teste"));
   getXml();
   // resUpdate('buttonTTest clicked');
 };
