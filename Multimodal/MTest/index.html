@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Test</title>
+  </head>
+  <body>
+    <button onclick="SendRequest ()">Send request</button>
+    <br/><br/>
+    <div id="output" style="width:420px; height:200px; overflow:auto; border:1px solid #000000; background-color:#f5e4b1;"></div>
+    <br/>
+    <button id="abortButton" onclick="AbortRequest ()" disabled="disabled">Abort request</button>
+  </body>
+
+
+    <script type="text/javascript" src="ajax.js"></script>
+
+    <script type="text/javascript">
+        var httpRequest = null;
+
+        function SendRequest () {
+            if (!httpRequest) {
+                httpRequest = CreateHTTPRequestObject ();   // defined in ajax.js
+            }
+            if (httpRequest) {
+                    // The requested file must be in the same domain that the page is served from.
+                // var url = "large.xml";
+                var url = "http://192.168.0.45:8801/IM?GUI";
+
+                httpRequest.open ("GET", url, true);    // async
+                httpRequest.onreadystatechange = OnStateChange;
+                httpRequest.send (null);
+
+                var abortButton = document.getElementById ("abortButton");
+                abortButton.disabled = false;
+            }
+        }
+
+        function OnStateChange () {
+            var output = document.getElementById ("output");
+            switch (httpRequest.readyState) {
+            case 1:
+                output.innerHTML += "The request is opened, but the send method has not been called yet.<br />";
+                break;
+            case 2:
+                output.innerHTML += "The request is sent but no data has been received yet.<br />";
+                break;
+            case 3:
+                output.innerHTML += "A part of the data has been received.<br />";
+                break;
+            case 4:
+                var abortButton = document.getElementById ("abortButton");
+                if (!abortButton.disabled) {
+                    if (IsRequestSuccessful (httpRequest)) {    // defined in ajax.js
+                        output.innerHTML += "All the data has been received.<br/>";
+                    }
+                    else {
+                        output.innerHTML += "<span style='color:red'>Operation failed!</span><br/>";
+                    }
+                    abortButton.disabled = true;
+                }
+                break;
+            };
+        }
+
+        function AbortRequest () {
+            var abortButton = document.getElementById ("abortButton");
+            abortButton.disabled = true;
+
+            var output = document.getElementById ("output");
+            output.innerHTML += "<span style='color:red'>Operation is aborted!</span><br/>";
+
+            httpRequest.abort ();        // aborts the request
+        }
+
+    </script>
+</html>
