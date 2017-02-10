@@ -27,6 +27,7 @@ buttonT4.onclick = function(){
 };
 buttonTTest.onclick = function(){
   // send "Mensagem de teste"
+<<<<<<< HEAD
   // getXml();
   sendXmlTest(xmlTest("Mensagem de teste"));
   // resUpdate('buttonTTest clicked');
@@ -34,6 +35,9 @@ buttonTTest.onclick = function(){
 buttonOpen.onclick = function(){
   // stop all connections
   // sender.abort();
+=======
+  sendXml(xmlMaker("Mensagem de teste"));
+>>>>>>> parent of c3b7bcc... last test version
   getXml();
 
   // resUpdate('buttonTTest clicked');

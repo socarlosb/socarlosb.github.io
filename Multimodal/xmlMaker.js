@@ -22,18 +22,3 @@ function xmlMaker(a){
 
 
 }
-
-function xmlTest(b){
-  var xmlStr = "<mmi:mmi xmlns:mmi=\"http://www.w3.org/2008/04/mmi-arch\" mmi:Version=\"1.0\">\
-    <mmi:startRequest mmi:source=\"APP\" mmi:target=\"IM\" mmi:requestId=\"app-id-1\" mmi:context=\"1\">\
-      <mmi:data>\
-        <speak version=\"1.0\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:schemaLocation=\"http://www.w3.org/2001/10/synthesis http://www.w3.org/TR/speech-synthesis/synthesis.xsd\" xml:lang=\"en-US\">\
-          <s>Mensagem de teste</s>\
-        </speak>\
-      </mmi:data>\
-    </mmi:startRequest>\
-  </mmi:mmi>";
-//" + b + "
-// console.log(xmlStr);
-  return xmlStr;
-}
