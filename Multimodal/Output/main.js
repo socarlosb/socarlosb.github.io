@@ -29,21 +29,21 @@ function passResult(command){
  switch(command){
    case "{\"recognized\" : [\"HELLO\"]}{\"recognized\" : [\"T1\"], \"text\": \"\"}{\"recognized\" : [\"T1\"], \"text\": \"\"}":
     // console.log('command ok');
-     return myImage.src = 't11.png';
+     return myImage.src = 'T11.png';
     // case "{\"recognized\" : [\"BYE\"]}{\"recognized\" : [\"T2\"], \"text\": \"\"}{\"recognized\" : [\"T2\"], \"text\": \"\"}":
       // console.log('command ok');
       break;
     case "{\"recognized\" : [\"BYE\"]}{\"recognized\" : [\"T2\"], \"text\": \"\"}{\"recognized\" : [\"T2\"], \"text\": \"\"}":
-      return myImage.src = 't22.png';
+      return myImage.src = 'T22.png';
       break;
     case "{\"recognized\" : [\"ACTION\",\"ACTIVATE\",\"CARLOS\"]}{\"recognized\" : [\"T1\"], \"text\": \"\"}{\"recognized\" : [\"T4\"], \"text\": \"\"}":
-      return myImage.src ='t14.png';
+      return myImage.src ='T14.png';
       break;
     case "{\"recognized\" : [\"FOUR\"]}{\"recognized\" : [\"T1\"], \"text\": \"\"}{\"recognized\" : [\"T2\"], \"text\": \"\"}":
-      return myImage.src ='t12.png';
+      return myImage.src ='T12.png';
       break;
     case "{\"recognized\" : [\"?!!!!\"]}{\"recognized\" : [\"T2\"], \"text\": \"\"}":
-      return myImage.src ='t2w8.png';
+      return myImage.src ='T2w8.png';
       break;
    default:
     myImage.src = 'placehold.png';
