@@ -36,6 +36,7 @@ body {
 }
 .soName h1 {
   margin: 0;
+  padding: 0;
 }
 .soDesc {
   display: flex;
@@ -76,20 +77,20 @@ body {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
 }
 .soContacts i{
   font-size: 1.5rem;
   color: #0094FF;
-  padding: 12px;
+  padding: 2px 20px;
 }
-
 .soContacts i:hover {
   color: #FFD800;
   /*font-size: 2rem;*/
 }
-
 .soContacts i:active {
   /*color: #FFD800;*/
   font-size: 3rem;
+}
+footer p{
+ margin-top: 10px;
 }
