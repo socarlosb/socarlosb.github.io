@@ -3,16 +3,15 @@ Colors
 #0094FF
 #FFD800
 #808080
-
 */
 
 body {
   font-family: 'Ubuntu', sans-serif;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
-  height: 97vh;
   text-align: center;
 }
 
@@ -26,6 +25,7 @@ body {
   font-size: 1.5rem;
 }
 .soImgAvatar {
+  margin-top: 20px;
   border-radius: 50%;
   box-shadow: 10px 10px 30px #333;
 }
@@ -71,13 +71,17 @@ body {
     6px 5px 1px #ccc, 5px 6px 1px #eee,
     7px 6px 1px #ccc;
 }
+.soContacts {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
 .soContacts i{
   font-size: 1.5rem;
   color: #0094FF;
   padding: 12px;
-  /*display: flex;
-  justify-content: center;
-  flex-wrap: wrap;*/
 }
 
 .soContacts i:hover {
