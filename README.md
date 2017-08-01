@@ -7,3 +7,5 @@ It will also help me learning the 'GitWay' of managing file versons.
 
 Thanks,
 c
+
+Commit test
