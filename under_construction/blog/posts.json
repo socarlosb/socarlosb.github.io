@@ -1,0 +1,12 @@
+[
+    {
+        "title": "Handle my Data",
+        "date": "2017/08/02",
+        "content": "So how am I handle the blog post data? Well, basically with a JSON file, I just call the data of the file with javascript and send it to an html div for you to read. Now, the process of how I am updating the JSON file needs to be simplified, right this is what I do:</p><ol><li>Open some text editor and write my three fields of the post (title, date and content)</li><li>I can use markup language on the content so to do that really fast I&rsquo;m using the site <a href='https://wordtohtml.net/' target='_blank'>wordtohtml.net</a></li><li>Then I have to update the JSON file on my repository with my new data</li></ol><p>This can be simplified, just need to think of a better way, one thing that I want to do is to combine steps1 and2 for now, I&rsquo;ll have to search for a way on how to do that."
+    },
+    {
+        "title": "Hello World!",
+        "date": "2017/08/01",
+        "content": "Hello everyone, this is the first blog post! I'm still thinking on how I'm going to do this, I know that a CMS like <a href='http://www.wordpress.org' target='_blank'>'Wordpress'</a> should be my first choice but I'm trying to code this my way, with vanilla 'javascript', I'll also try to avoid any 'javascript' library.</p><p> So let's see what it can be done, and how will I do it. All the site code can be found on git <a href='https://github.com/socarlosb/socarlosb.github.io' target='_blank'>here</a> and you can use it at your own risk :) My goal is to explain, as simpler as possible, how I did this site, my code and info web sources, how I solved several of my daily challenges, and more…</p><p>So stay tuned… although I don't know how you will do that, I'll probably use twitter or email. What do you think?"
+    }
+]
