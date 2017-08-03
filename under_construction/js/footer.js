@@ -6,4 +6,5 @@
 let footer = document.querySelector('footer');
 
 // send the content to the page
-window.onload = footer.innerHTML = '<h5>&copy 2017 socarlosb web lab</h5>';
+window.onload = footer.innerHTML =
+    `<h5>&copy 2017 socarlosb web lab</h5>`;

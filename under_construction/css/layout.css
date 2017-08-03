@@ -1,29 +1,28 @@
 /* socarlosb.github.io layout sheet */
 /* layout css */
 
-body{
-
-
-}
-section{
+#posts{
     /* grid */
-    display: grid;
+     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 1em;
-    grid-auto-rows: minmax(100px, auto);
+    grid-auto-rows: minmax(100px, auto); 
 }
 article{
     padding: 1em;
 }
+#templates{
+     display: grid;
+}
 
 /* media queries for the posts */
 @media screen and (max-width: 1024px){
-    section{
+    #posts{
         grid-template-columns: repeat(2, 1fr);
     }
 }
 @media screen and (max-width: 768px){
-    section{
+    #posts{
         grid-template-columns: repeat(1, 1fr);
     }
 }

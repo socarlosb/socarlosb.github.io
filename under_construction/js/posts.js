@@ -24,12 +24,14 @@ function getData(params) {
         let jsonData = (JSON.parse(response));
         // get each post and send it to the DOM
         Object.keys(jsonData).forEach(function (key) {
-            posts.innerHTML += '<article>' +
+            posts.innerHTML +=
+                '<article>' +
                 '<h2>' + jsonData[key].title + '</h2>' +
                 '<h3>' + jsonData[key].date + '</h3>' +
                 '<p>' + jsonData[key].content + '</p>' +
                 '<p>Send me an email message by clicking <a href="mailto: socarlosb@gmail.com">here</a>!</p>' +
                 '</article>';
+            // TODO: review this upper code!
         });
     });
 }

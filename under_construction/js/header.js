@@ -6,4 +6,5 @@
 let header = document.querySelector('header');
 
 // send the content to the page
-window.onload = header.innerHTML = '<h1>socarlosb web lab</h1>';
+window.onload = header.innerHTML =
+    `<h1>socarlosb web lab</h1>`;

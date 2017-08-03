@@ -9,24 +9,44 @@
     <!-- import base css  -->
     <link href="css/base.css" type="text/css" rel="stylesheet">
     <!-- import layout css  -->
-    <link href="css/layout.css" type="text/css" rel="stylesheet">
+    <link href="css/layout.css" type="text/css" rel="stylesheet" id="cssLayout">
+
     <!-- import css template  -->
-    <link href="css/cappuccino.css" type="text/css" rel="stylesheet">
+    <link href="css/tempCappuccino.css" id="cssTheme" type="text/css" rel="stylesheet">
 </head>
 
 <body>
+    <!-- template stuff -->
+    <section id="templates">
 
+        <!-- test css change with js -->
+        <div id="templateChanger">
+            <!-- <p>Change color here </p> -->
+            <button onclick="changeCSS('cssTheme', 'css/tempCappuccino.css', 'css/tempGoogle.css', 'css/tempBootstrap.css')">Change css color</button>
+            <p>or select from one of this list:</p>
+            <div id="templateSelector"></div>
+        </div>
+        <!-- test layout change with js -->
+        <div id="templateLayoutChanger"></div>
+        <!-- end of template stuff -->
+    </section>
+
+    <!-- header content comes from header.js -->
     <header></header>
 
     <!-- added an id to use more sections if needed  -->
     <section id='posts'></section>
 
+    <!-- footer content comes from footer.js -->
     <footer></footer>
 
     <!-- call the content  -->
+    <script src="js/main.js"></script>
     <script src="js/header.js"></script>
     <script src="js/posts.js"></script>
     <script src="js/footer.js"></script>
+    <script src="js/templateSelector.js"></script>
+    <script src="js/templateLayoutSelector.js"></script>
 </body>
 
 </html>

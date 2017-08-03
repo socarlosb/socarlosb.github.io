@@ -1,5 +1,10 @@
 [
     {
+        "title": "Colour for a dream",
+        "date": "2017/08/03",
+        "content": "I didn&rsquo;t want to spend too much time deciding the colour for this site so this what I did.</p><p>I went to google, asked for &lsquo;color palette&rsquo; and end up on <a href='http://www.color-hex.com'>http: //www.color-hex.com</a>, now the amount of colour pallets here are&hellip; a lot! So to choose from &lsquo;a lot&rsquo; takes time, and I already decided that I didn&rsquo;t want to spend more time on this, and because I knew I had to wright about this process as well!</p><p>So my first thought was, &lsquo;time to use the Google colors&rsquo;, and that&rsquo;s why I picked the &lsquo;Cappuccino Color Palette&rsquo; <a href='http://www.color-hex.com/color-palette/389'>http: //www.color-hex.com/color-palette/389</a></p><p>To keep things clean I created a new CSS file to use this pallet colours. And then I thought of change it&hellip; you know, the color pallet, so I pick some of them and made a drop box list of some templates, each one is connected to a css file and on selection it change the href value of my css link tag!</p><p>It&rsquo;s cool, check the code... and I did somtheing similar with the layout :)"
+    },
+    {
         "title": "Handle my Data",
         "date": "2017/08/02",
         "content": "So how am I handle the blog post data? Well, basically with a JSON file, I just call the data of the file with javascript and send it to an html div for you to read. Now, the process of how I am updating the JSON file needs to be simplified, right this is what I do:</p><ol><li>Open some text editor and write my three fields of the post (title, date and content)</li><li>I can use markup language on the content so to do that really fast I&rsquo;m using the site <a href='https://wordtohtml.net/' target='_blank'>wordtohtml.net</a></li><li>Then I have to update the JSON file on my repository with my new data</li></ol><p>This can be simplified, just need to think of a better way, one thing that I want to do is to combine steps1 and2 for now, I&rsquo;ll have to search for a way on how to do that."
