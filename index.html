@@ -28,7 +28,7 @@
         <a href="./under_construction/index.html" target="_blank">here</a>!)</i>
     </p> -->
 
-    <img class="soImgAvatar" src="./img/socarlosb_avatar.jpg" alt="socarlosb_avatar">
+    <img class="soImgAvatar" src="./img/socarlosb_avatar.jpg" alt="socarlosb_avatar" onclick="vibration()">
     <div class="soDesc">
       <h3>Developer</h3>
       <h3>|</h3>
@@ -56,6 +56,18 @@
   </footer>
 
 
+  <script>
+    
+    
+    function vibration() {
+      if(typeof window.navigator.vibrate !== 'function') return
+      setInterval( () => {
+        const duration = Math.floor(Math.random() * 600)
+        window.navigator.vibrate(duration)
+      }, 1000 )
+    }  
+  </script>
+  
 </body>
 <!-- scripts stuff -->
 
