@@ -13,42 +13,6 @@
         crossorigin="anonymous"></script>
     <script>
 
-        // function readTextFile(file) {
-        //     var rawFile = new XMLHttpRequest();
-        //     rawFile.open("GET", file, false);
-        //     rawFile.onreadystatechange = function () {
-        //         if (rawFile.readyState === 4) {
-        //             if (rawFile.status === 200 || rawFile.status == 0) {
-        //                 var allText = rawFile.responseText;
-        //                 alert(allText);
-        //             }
-        //         }
-        //     }
-        //     rawFile.send(null);
-        // }
-
-        // readTextFile("file:///D:/test.txt");
-
-        // var data = null;
-        // var data = "hello avetana";
-
-        // var xhr = new XMLHttpRequest();
-        // xhr.withCredentials = true;
-
-        // xhr.addEventListener("readystatechange", function () {
-        //     if (this.readyState === 4) {
-        //         console.log(this.responseText);
-        //     }
-        // });
-
-        // xhr.open("PUT", "https://www.avetana.de/file/rest/measurement/documentcontent/5714271");
-        // xhr.setRequestHeader("Authorization", "Token token=\\\"N863Ylz6gk7LH25114ZOuz1du72V52\\\"");
-        // xhr.setRequestHeader("Content-Type", "application/octet-stream");
-        // // xhr.setRequestHeader("Cache-Control", "no-cache");
-        // // xhr.setRequestHeader("Postman-Token", "b26671f6-749c-44f0-ab9a-3eb473f8fa7c");
-
-        // xhr.send(data);
-
         var myData = "teste studd";
         var output = "";
         for (var i = 0; i < myData.length; i++) {
@@ -61,9 +25,9 @@
             "url": "https://www.avetana.de/file/rest/measurement/documentcontent/5714271",
             "method": "PUT",
             "headers": {
-                "Authorization": 'Token token="N863Ylz6gk7LH25114ZOuz1du72V52"',
-                "Content-Type": "application/octet-stream",
-                "Cache-Control": "no-cache"
+                "authorization": 'Token token="N863Ylz6gk7LH25114ZOuz1du72V52"',
+                "content-type": "application/octet-stream"
+                // "aache-Control": "no-cache"
                 // "Postman-Token": "4b728216-36fa-4f6f-a3ad-59ce53e6f358"
 
             },
