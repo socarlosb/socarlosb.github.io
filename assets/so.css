@@ -18,43 +18,46 @@
 body {
   font-family: "Ubuntu", sans-serif;
   height: 100vh;
-  overflow: hidden;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  text-align: center;
   color: var(--dark-color);
   background-color: var(--light-color);
-  display: flex;
-  flex-direction: column;
 }
 
 section {
   margin: 2em;
+  flex: 1;
 }
 
-.intro {
-  flex: 2;
+section div {
+  display: flex;
+  align-items: center;
 }
 
-.intro img {
-  max-width: 10em;
+section span {
+  padding: 0.1em 0.5em;
+  background-color: var(--second-color);
+}
+
+section img {
+  max-width: 2.5em;
   border-radius: 50%;
   margin: 2em;
 }
 
-.contacts {
-  flex: 0;
-  display: flex;
-  justify-content: center;
+section p {
+  margin-bottom: 0.5em;
 }
 
-.contacts a {
-  padding: 1em;
-  margin: 0 1em;
+section li {
+  margin-left: 2em;
+}
+
+a {
+  padding: 0.1em 0.5em;
   background-color: var(--main-color);
   color: var(--light-color);
+  text-decoration: none;
 }
 
 footer {
