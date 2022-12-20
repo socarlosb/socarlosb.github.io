@@ -1,0 +1,27 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import NavBar from "../components/NavBar.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../config";
+export interface Props {}
+
+const {} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body
+    class="h-screen w-screen flex justify-center items-center text-gray-900 bg-gray-200 dark:bg-gray-900 dark:text-gray-100 transition-all font-sans text-base"
+  >
+    <main
+      class="max-w-6xl flex flex-col gap-4 dark:bg-gray-800 bg-gray-100 shadow-sm p-8 rounded-lg"
+    >
+      <NavBar />
+      <slot />
+      <Footer />
+    </main>
+  </body>
+</html>
