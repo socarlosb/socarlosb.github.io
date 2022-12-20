@@ -1,0 +1,35 @@
+---
+import BaseHead from '../components/BaseHead.astro';
+import Footer from '../components/Footer.astro';
+import Link from '../components/Link.astro';
+import { SITE_DESCRIPTION,SITE_TITLE } from '../config';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body class="h-screen w-screen flex justify-center items-center flex-col gap-4">
+		<main class="flex flex-col gap-4">
+			<div class="flex gap-2 items-center">
+				<img class="rounded-full w-10" src="https://avatars.githubusercontent.com/u/16838793?v=4" alt="avatar">
+				<p>Hello, I'm <span class="bg-yellow-300 py-1 px-2">Carlos</span>!</p>
+			</div>
+			<p>
+				I'm a software developer with a focus on getting human life simpler using the web and javascript!
+			</p>
+			<ul>
+				<li>🏢 Currently working as a Frontend Software Engineer for <Link href="https://innovationcast.com/" title="Innovation Cast"/></li>
+				<li>📈 Find my experience path on <Link href="https://www.linkedin.com/in/socarlosb" title="Linkedin"/></li>
+				<li>🤷‍♂️ Social media? Check <Link href="https://twitter.com/socarlosb" title="Twitter" />, but I don't tweet a lot</li>
+				<li>🧪 You can find some code experiences on my <Link href="https://github.com/socarlosb" title="GitHub" /> profile</li>
+				<li>🎯 You can also see my <Link
+						href="https://docs.google.com/document/d/1hVBdvrSUuCcu-I7onIHOzMw6-b12Kyvg--7Bd-omPuQ/edit?usp=sharing" title="CV"
+						/></li>
+				<li>💪 As a last resource you can always send me an <Link href="mailto:socarlosb@gmail.com" title="email" /> about some collaboration or challenge</li>
+			</ul>
+		</main>
+		<Footer />
+	</body>
+</html>
