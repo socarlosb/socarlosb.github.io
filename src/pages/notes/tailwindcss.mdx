@@ -1,0 +1,45 @@
+---
+title: "Tailwind CSS notes"
+description: "Tailwind CSS notes"
+publishDate: ""
+thumbnail: ""
+---
+
+https://www.youtube.com/watch?v=cZc4Jn5nK3k&t=510s
+https://www.youtube.com/watch?v=GEYkwfYytAM
+https://www.youtube.com/watch?v=MAtaT8BZEAo
+
+After learning CSS this framework will help you design your layouts faster:
+
+- Don't waste time naming your classes
+- ...
+
+## Custom Design System
+
+Update your `tailwind.config.js` file with your design sizes colors, and other variables.
+Decide with your team some kind of naming before starting to use this.
+
+```js
+module.exports = {
+  darkMode: "class",
+  content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
+  theme:
+    screens:{
+      tablet: '960px',
+      desktop:'1248px'
+    },
+    colors:{
+      zinc:'#262626',
+      orange:'#c2410c'
+    }
+  },
+  plugins: [],
+};
+
+```
+
+---
+
+More info on:
+[Tailwind Labs - Youtube channel](https://www.youtube.com/@TailwindLabs/videos)
+[Tailwind CSS Docs](https://tailwindcss.com/docs)
