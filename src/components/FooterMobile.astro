@@ -1,0 +1,27 @@
+---
+import IconAbout from "./icons/IconAbout.astro";
+import IconCV from "./icons/IconCV.astro";
+import IconEmail from "./icons/IconEmail.astro";
+---
+
+<footer class="text-center font-light text-xs">
+  <ul
+    class="flex justify-evenly dark:text-amber text-indigo border-t-2 border-gray-300 py-2"
+  >
+    <li class="w-10 h-10">
+      <a href="/about" title="About page">
+        <IconAbout />
+      </a>
+    </li>
+    <li class="h-10 w-10">
+      <a href="/cv" title="CV page">
+        <IconCV />
+      </a>
+    </li>
+    <li class="h-10 w-10">
+      <a href="mailto:socarlosb@gmail.com" title="Send email">
+        <IconEmail />
+      </a>
+    </li>
+  </ul>
+</footer>

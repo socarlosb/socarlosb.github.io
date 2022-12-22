@@ -14,13 +14,13 @@ const {} = Astro.props;
     <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
   </head>
   <body
-    class="h-screen w-screen flex justify-center items-center text-gray-900 bg-gray-200 dark:bg-gray-900 dark:text-gray-100 transition-all font-sans text-base"
+    class="h-screen w-screen flex text-dark bg-light dark:bg-dark dark:text-light transition-all font-sans text-base justify-center"
   >
-    <main
-      class="max-w-6xl flex flex-col gap-4 dark:bg-gray-800 bg-gray-100 shadow-sm p-8 rounded-lg"
-    >
-      <NavBar />
-      <slot />
+    <main class="flex flex-col justify-between gap-2">
+      <section>
+        <NavBar />
+        <slot />
+      </section>
       <Footer />
     </main>
   </body>

@@ -1,0 +1,29 @@
+---
+import IconLink from "./icons/IconLink.astro";
+
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+}
+
+const { title, description, href } = Astro.props;
+---
+
+<article
+  class="border-l-dark-indigo dark:border-l-dark-amber border-l-4 pl-2 flex flex-col desktop:flex-row w-full gap-2"
+>
+  <main class="desktop:w-3/4">{description}</main>
+  <footer class="italic text-sm font-semibold flex desktop:w-1/4">
+    <a
+      class="underline underline-offset-4 font-bold text-indigo dark:text-amber w-full flex gap-1 items-center justify-end"
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      >{title}
+      <span class="w-4">
+        <IconLink />
+      </span>
+    </a>
+  </footer>
+</article>
