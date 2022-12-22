@@ -1,10 +1,10 @@
 ---
-import Link from "../components/Link.astro";
+import Card from "../components/Card.astro";
 import PageLayout from "../layout/PageLayout.astro";
 ---
 
 <PageLayout>
-  <main class="flex flex-col gap-4">
+  <section class="flex flex-col gap-6 px-4">
     <div class="flex gap-2 items-center">
       <img
         class="rounded-full w-10"
@@ -17,47 +17,36 @@ import PageLayout from "../layout/PageLayout.astro";
         >!
       </p>
     </div>
-    <p>
-      I'm a software developer with a focus on getting human life simpler using
-      the web and javascript!
+    <p class="text-lg">
+      A software developer with a focus on getting human life simpler using the
+      web and javascript!
     </p>
-    <ul>
-      <li>
-        🏢 Currently working as a Frontend Software Engineer for <Link
-          href="https://innovationcast.com/"
-          title="Innovation Cast"
-        />
-      </li>
-      <li>
-        📈 Find my experience path on <Link
-          href="https://www.linkedin.com/in/socarlosb"
-          title="Linkedin"
-        />
-      </li>
-      <li>
-        🤷‍♂️ Social media? Check <Link
-          href="https://twitter.com/socarlosb"
-          title="Twitter"
-        />, but I don't tweet a lot
-      </li>
-      <li>
-        🧪 You can find some code experiences on my <Link
-          href="https://github.com/socarlosb"
-          title="GitHub"
-        /> profile
-      </li>
-      <li>
-        🎯 You can also see my <Link
-          href="https://docs.google.com/document/d/1hVBdvrSUuCcu-I7onIHOzMw6-b12Kyvg--7Bd-omPuQ/edit?usp=sharing"
-          title="CV"
-        />
-      </li>
-      <li>
-        💪 As a last resource you can always send me an <Link
-          href="mailto:socarlosb@gmail.com"
-          title="email"
-        /> about some collaboration or challenge
-      </li>
-    </ul>
-  </main>
+    <div class="flex flex-col gap-4">
+      <Card
+        title="InnovationCast"
+        description="Currently working as a Frontend Software Engineer on software that helps people co-create ideas!"
+        href="https://innovationcast.com"
+      />
+      <Card
+        title="LinkedIn"
+        description="Find my experience path and connections on LinkedIn!"
+        href="https://www.linkedin.com/in/socarlosb"
+      />
+      <Card
+        title="GitHub"
+        description="Find some code experience on GitHub!"
+        href="https://github.com/socarlosb"
+      />
+      <Card
+        title="CV"
+        description="Check my online CV!"
+        href="https://docs.google.com/document/d/1hVBdvrSUuCcu-I7onIHOzMw6-b12Kyvg--7Bd-omPuQ/edit?usp=sharing"
+      />
+      <Card
+        title="Email"
+        description="Contact me for collaborations!"
+        href="mailto:socarlosb@gmail.com"
+      />
+    </div>
+  </section>
 </PageLayout>
