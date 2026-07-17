@@ -14,12 +14,20 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout your repository using git
+      - name: Checkout
         uses: actions/checkout@v4
-      - name: Install, build, and upload your site
-        uses: withastro/action@v3
+      - name: Assemble static site
+        # public/* is merged into the site root so unlinked demos keep
+        # their old URLs (e.g. /demo-cdc/) without being referenced anywhere.
+        run: |
+          mkdir -p _site
+          cp index.html _site/
+          cp -r assets _site/
+          cp -r public/. _site/
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          node-version: 18
+          path: _site
 
   deploy:
     needs: build

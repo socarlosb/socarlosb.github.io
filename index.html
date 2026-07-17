@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carlos Barbosa — Senior Software Engineer · Front-end · TypeScript, React, Node.js</title>
+<meta name="description" content="Senior software engineer in Porto, front-end focused. Ten years building for the web: TypeScript, React, Node.js, and an unhealthy attention to UI detail.">
+
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="canonical" href="https://socarlosb.github.io/">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://socarlosb.github.io/">
+<meta property="og:title" content="Carlos Barbosa — Senior Software Engineer · Front-end">
+<meta property="og:description" content="Senior software engineer in Porto, front-end focused. Ten years building for the web: TypeScript, React, Node.js.">
+<meta property="og:image" content="https://socarlosb.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Carlos Barbosa — Senior Software Engineer · Front-end">
+<meta name="twitter:description" content="Senior software engineer in Porto, front-end focused. Ten years building for the web: TypeScript, React, Node.js.">
+<meta name="twitter:image" content="https://socarlosb.github.io/assets/og-image.png">
+
+<style>
+  :root{
+    --glaze:#F4F7FA;        /* tile-glaze white */
+    --azul:#1F3E99;         /* azulejo cobalt */
+    --azul-deep:#14295F;    /* shadowed cobalt */
+    --ink:#101828;
+    --muted:#525B6B;
+    --line:#D8DFEA;
+    --tram:#F2B705;         /* Porto tram yellow — focus & hover only */
+    --display:"Bricolage Grotesque","Avenir Next","Segoe UI Variable Display","Segoe UI",sans-serif;
+    --body:"IBM Plex Sans",system-ui,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    --mono:"IBM Plex Mono",ui-monospace,"Cascadia Mono","SFMono-Regular",Consolas,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--glaze);
+    color:var(--ink);
+    font-family:var(--body);
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--azul);text-decoration:none;border-bottom:1px solid var(--line);transition:border-color .15s ease,color .15s ease}
+  a:hover{border-color:var(--tram)}
+  a:focus-visible{outline:3px solid var(--tram);outline-offset:3px;border-radius:2px}
+  .wrap{max-width:880px;margin:0 auto;padding:0 24px}
+
+  /* ---------- azulejo band (a wink, not a theme) ---------- */
+  .band{
+    height:10px;
+    background:
+      repeating-linear-gradient(90deg,
+        var(--azul) 0 10px, var(--glaze) 10px 20px,
+        var(--glaze) 20px 30px, var(--azul) 30px 40px);
+    border-bottom:2px solid var(--azul-deep);
+  }
+
+  /* ---------- header ---------- */
+  header{padding:72px 0 56px}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:13px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--azul);
+    display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:26px;height:2px;background:var(--azul)}
+  h1{
+    font-family:var(--display);
+    font-weight:800;
+    font-size:clamp(42px,7vw,72px);
+    line-height:1.02;
+    letter-spacing:-.02em;
+    margin:18px 0 20px;
+  }
+  h1 .thin{font-weight:400;color:var(--azul)}
+  .lede{max-width:56ch;font-size:19px;color:var(--muted)}
+  .lede strong{color:var(--ink);font-weight:600}
+
+  /* ---------- sections ---------- */
+  section{padding:44px 0;border-top:1px solid var(--line)}
+  h2{
+    font-family:var(--mono);
+    font-size:13px;font-weight:500;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:var(--azul);
+    margin-bottom:26px;
+  }
+
+  /* ---------- now ---------- */
+  .now p{max-width:62ch}
+  .now .org{font-weight:600}
+
+  /* ---------- experience ---------- */
+  .job{display:grid;grid-template-columns:150px 1fr;gap:8px 28px;padding:18px 0}
+  .job + .job{border-top:1px dashed var(--line)}
+  .job .when{font-family:var(--mono);font-size:14px;color:var(--muted);padding-top:3px}
+  .job h3{font-family:var(--display);font-size:21px;font-weight:600;letter-spacing:-.01em}
+  .job .role{color:var(--azul);font-weight:500;font-size:15px;margin:2px 0 6px}
+  .job p{color:var(--muted);font-size:16px;max-width:58ch}
+
+  /* ---------- beyond ---------- */
+  .beyond p{max-width:60ch;color:var(--muted)}
+  .beyond p strong{color:var(--ink)}
+
+  /* ---------- contact ---------- */
+  .contact-note{max-width:56ch;color:var(--muted)}
+  .links{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px}
+  .btn{
+    font-family:var(--mono);font-size:14px;font-weight:500;
+    border:2px solid var(--azul);color:var(--azul);
+    padding:10px 20px;
+    transition:background .15s ease,color .15s ease;
+  }
+  .btn:hover{background:var(--azul);color:var(--glaze);border-color:var(--azul)}
+  .btn.primary{background:var(--azul);color:var(--glaze)}
+  .btn.primary:hover{background:var(--azul-deep);border-color:var(--azul-deep)}
+
+  /* ---------- footer + cat ---------- */
+  footer{margin-top:56px;padding:0 0 46px}
+  .ledge{position:relative;border-top:2px solid var(--azul);padding-top:16px;
+    display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:8px}
+  footer small{font-family:var(--mono);font-size:13px;color:var(--muted)}
+  .cat{position:absolute;right:28px;top:-28px;width:34px;height:26px}
+  .cat rect{fill:var(--azul)}
+  .cat .eye{fill:var(--glaze)}
+  @keyframes blink{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+  .cat .eye{transform-origin:center;animation:blink 6s infinite}
+  .cat .tail{animation:tail 4s ease-in-out infinite;transform-origin:2px 22px}
+  @keyframes tail{0%,100%{transform:rotate(0deg)}50%{transform:rotate(-14deg)}}
+
+  @media (prefers-reduced-motion:reduce){
+    *{animation:none!important;transition:none!important}
+    html{scroll-behavior:auto}
+  }
+  @media (max-width:560px){
+    .job{grid-template-columns:1fr}
+    header{padding:52px 0 40px}
+  }
+</style>
+</head>
+<body>
+
+<div class="band" aria-hidden="true"></div>
+
+<header class="wrap">
+  <p class="eyebrow">Porto, Portugal</p>
+  <h1>Carlos Barbosa<br><span class="thin">makes the web feel simpler.</span></h1>
+  <p class="lede">Senior software engineer, front-end focused: <strong>TypeScript, React, Node.js</strong>.
+  Ten years shipping for the web, from offline-first apps to full storefronts,
+  with an unreasonable attention to interface detail.</p>
+</header>
+
+<main class="wrap">
+
+  <section class="now">
+    <h2>Now</h2>
+    <p>Building <span class="org"><a href="https://innovationcast.com">InnovationCast</a></span>,
+    a B2B SaaS for innovation and idea management. I'm driving the incremental migration
+    of the front-end from KnockoutJS to React, TypeScript and TailwindCSS; day to day it's
+    new features, honest bug fixes, and keeping the UI fast and consistent.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <div class="job">
+      <div class="when">2022 – now</div>
+      <div>
+        <h3>InnovationCast</h3>
+        <p class="role">Senior Software Engineer</p>
+        <p>Front-end migration from KnockoutJS to React, TypeScript and TailwindCSS:
+        architecture research, testing strategy, and feature delivery across both stacks.</p>
+      </div>
+    </div>
+    <div class="job">
+      <div class="when">2016 – 2022</div>
+      <div>
+        <h3>INOVA+</h3>
+        <p class="role">Digital Consultant · Full-stack Developer</p>
+        <p>Node.js and React applications, CMS and e-commerce sites, Docker-based
+        GitLab CI/CD pipelines, and technical training for clients and teams.</p>
+      </div>
+    </div>
+    <div class="job">
+      <div class="when">before 2016</div>
+      <div>
+        <h3>First career, then a rewrite</h3>
+        <p>CAD drafting and IT support, followed by a deliberate retraining into
+        web development. In tech long before the first commit.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="beyond">
+    <h2>Beyond the keyboard</h2>
+    <p>I volunteer with a local animal association, helping stray cats through the
+    <strong>CED program</strong> (trap–neuter–return). Cats remain unimpressed
+    by my TypeScript.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p class="contact-note">Open to good conversations about front-end work,
+    product craft, and collaboration.</p>
+    <div class="links">
+      <a class="btn primary" href="mailto:socarlosb@gmail.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/socarlosb">LinkedIn</a>
+      <a class="btn" href="https://github.com/socarlosb">GitHub</a>
+      <a class="btn" href="assets/cv-en-carlos-barbosa.pdf">CV (PDF)</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap">
+  <div class="ledge">
+    <svg class="cat" viewBox="0 0 34 26" aria-hidden="true">
+      <!-- tail -->
+      <rect class="tail" x="0" y="14" width="4" height="10"/>
+      <!-- body -->
+      <rect x="6" y="12" width="18" height="12"/>
+      <!-- head -->
+      <rect x="18" y="4" width="12" height="12"/>
+      <!-- ears -->
+      <rect x="18" y="0" width="4" height="4"/>
+      <rect x="26" y="0" width="4" height="4"/>
+      <!-- eyes -->
+      <rect class="eye" x="21" y="8" width="2" height="3"/>
+      <rect class="eye" x="26" y="8" width="2" height="3"/>
+    </svg>
+    <small>© <span id="y">2026</span> Carlos Barbosa · Built in Porto</small>
+    <small>No trackers. Just one cat.</small>
+  </div>
+</footer>
+
+<script>document.getElementById("y").textContent = new Date().getFullYear();</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+  <!-- azulejo tile -->
+  <rect width="16" height="16" rx="2" fill="#1F3E99"/>
+  <!-- pixel cat head, glaze white -->
+  <g fill="#F4F7FA">
+    <rect x="2" y="1" width="3" height="3"/>
+    <rect x="11" y="1" width="3" height="3"/>
+    <rect x="2" y="4" width="12" height="11"/>
+  </g>
+  <!-- eyes -->
+  <g fill="#1F3E99">
+    <rect x="5" y="8" width="2" height="3"/>
+    <rect x="10" y="8" width="2" height="3"/>
+  </g>
+</svg>
