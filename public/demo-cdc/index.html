@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Causas de Caudas — Adoção e proteção animal em Matosinhos e Porto</title>
-  <meta name="description" content="Associação de proteção animal 100% voluntária em Matosinhos. Adote um animal, apadrinhe, seja família de acolhimento ou ajude com um donativo." />
+  <title>Causas de Caudas — Adoção e proteção animal no Porto</title>
+  <meta name="description" content="Associação de proteção animal do Porto, sem fins lucrativos e 100% voluntária. Adote um animal, apadrinhe, seja família de acolhimento ou ajude com um donativo." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
 </head>
@@ -20,6 +20,7 @@
         <li><a href="animais.html">Animais</a></li>
         <li><a href="ajudar.html">Como ajudar</a></li>
         <li><a href="sobre.html">Sobre nós</a></li>
+        <li><a href="faq.html">Dúvidas</a></li>
         <li><a href="contactos.html">Contactos</a></li>
         <li><a class="btn" href="ajudar.html#donativos">Doar</a></li>
       </ul>
@@ -38,8 +39,8 @@
 
   <section class="hero">
     <div class="container">
-      <h1>Há uma cauda à espera de si</h1>
-      <p>Somos uma associação 100% voluntária de Matosinhos que resgata, trata e encontra famílias para animais de rua.</p>
+      <h1>Há uma cauda à sua espera</h1>
+      <p>Somos uma associação de proteção animal do Porto, sem fins lucrativos e 100% voluntária, com intervenção nos concelhos limítrofes. Dedicamo-nos ao <a href="sobre.html#ced">CED</a> (Capturar, Esterilizar, Devolver) e, sempre que necessário, resgatamos, tratamos e encontramos famílias para os animais de rua.</p>
       <div class="actions">
         <a class="btn" href="animais.html">Quero adotar</a>
         <a class="btn btn-secondary" href="ajudar.html">Como posso ajudar</a>
@@ -53,22 +54,21 @@
         <div><div class="num" data-stat="adocoes">+600</div><div class="label">adoções</div></div>
         <div><div class="num" data-stat="esterilizacoesFelideos">+5000</div><div class="label">esterilizações de felídeos</div></div>
         <div><div class="num" data-stat="esterilizacoesCanideos">+110</div><div class="label">esterilizações de canídeos</div></div>
-        <div><div class="num" data-stat="voluntarios">100%</div><div class="label">voluntários — ninguém recebe salário</div></div>
       </div>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <h2>À espera de família</h2>
-      <div class="cards" id="destaques-grid"></div>
+      <h2>Animais para adoção</h2>
+      <div class="cards cards-2" id="destaques-grid"></div>
       <p style="margin-top:1.2rem"><a class="btn btn-secondary" href="animais.html">Ver todos os animais</a></p>
     </div>
   </section>
 
   <section>
     <div class="container">
-      <h2>Três formas de mudar uma vida</h2>
+      <h2>Quatro formas de mudar uma vida</h2>
       <div class="cards">
         <div class="card">
           <h3>🏠 Adotar</h3>
@@ -79,6 +79,11 @@
           <h3>💛 Doar</h3>
           <p>Cada euro paga ração, vacinas e esterilizações. IBAN, MB Way ou 1 €/mês no Teaming.</p>
           <a href="ajudar.html#donativos">Fazer um donativo →</a>
+        </div>
+        <div class="card">
+          <h3>💙 Apadrinhar</h3>
+          <p>Não pode adotar? Apoie um animal ou uma colónia com um valor mensal — uma ajuda com nome e rosto.</p>
+          <a href="ajudar.html#apadrinhar">Apadrinhar um animal →</a>
         </div>
         <div class="card">
           <h3>🤝 Acolher (FAT)</h3>
@@ -92,13 +97,10 @@
   <section>
     <div class="container">
       <h2>Finais felizes</h2>
-      <!-- TODO: substituir por histórias reais com fotos antes/depois -->
-      <div class="cards">
+      <!-- As histórias vêm de data/stories.js; este cartão-convite fica sempre no fim -->
+      <div class="cards cards-2" id="historias-grid">
         <div class="card">
-          <h3>Leila</h3>
-          <p>Resgatada com semanas de vida, passou pela nossa rede de acolhimento e hoje dorme num sofá só dela. Cada adoção começa com alguém que decidiu ajudar.</p>
-        </div>
-        <div class="card">
+          <div class="card-capa-placeholder" aria-hidden="true">📷🐾</div>
           <h3>A sua história aqui?</h3>
           <p>Adotou um patudo nosso? Adoramos saber como está — envie-nos uma foto e umas linhas para partilharmos aqui.</p>
           <a href="contactos.html">Contar a minha história →</a>
@@ -148,6 +150,7 @@
 
 <script src="data/animals.js"></script>
 <script src="data/stats.js"></script>
+<script src="data/stories.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

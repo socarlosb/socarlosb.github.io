@@ -433,10 +433,254 @@ if (selectedAnimal && detailContainer) {
   apply();
 }
 
-// Homepage: destaques (até 3 animais disponíveis)
+// Homepage: destaques (2 animais disponíveis, escolhidos ao acaso em cada visita
+// para todos terem visibilidade)
 const destaques = document.getElementById("destaques-grid");
 if (destaques && typeof ANIMALS !== "undefined") {
-  renderAnimals(destaques, ANIMALS.filter((a) => a.estado === "disponivel").slice(0, 3));
+  const disponiveis = ANIMALS.filter((a) => a.estado === "disponivel");
+  for (let i = disponiveis.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [disponiveis[i], disponiveis[j]] = [disponiveis[j], disponiveis[i]];
+  }
+  renderAnimals(destaques, disponiveis.slice(0, 2));
+}
+
+/* ---------- Ampliar as ilustrações de exemplo (página Como ajudar) ---------- */
+
+const illuButtons = Array.from(document.querySelectorAll(".illu-samples button"));
+if (illuButtons.length) {
+  const fotos = illuButtons.map((btn) => btn.querySelector("img").getAttribute("src"));
+  illuButtons.forEach((btn, i) => {
+    btn.addEventListener("click", () =>
+      openLightbox(fotos, i, "Exemplo de ilustração personalizada")
+    );
+  });
+}
+
+/* ---------- Parceiros e amigos (página Sobre nós) ---------- */
+// Preenche as grelhas [data-partners="tipo"] a partir de data/partners.js.
+
+document.querySelectorAll("[data-partners]").forEach((grid) => {
+  if (typeof PARTNERS === "undefined") return;
+  const tipo = grid.getAttribute("data-partners");
+  PARTNERS.filter((p) => p.tipo === tipo).forEach((p) => {
+    const img = document.createElement("img");
+    img.src = p.img;
+    img.alt = "Logótipo de " + p.nome;
+    img.loading = "lazy";
+    if (p.url) {
+      const link = document.createElement("a");
+      link.href = p.url;
+      link.target = "_blank";
+      link.rel = "noopener noreferrer";
+      link.title = p.nome;
+      link.appendChild(img);
+      grid.appendChild(link);
+    } else {
+      img.title = p.nome;
+      grid.appendChild(img);
+    }
+  });
+});
+
+/* ---------- Finais felizes (homepage) ---------- */
+// Cartões a partir de data/stories.js; o cartão-convite escrito no HTML fica no fim.
+
+const historias = document.getElementById("historias-grid");
+if (historias && typeof STORIES !== "undefined") {
+  const convite = historias.firstElementChild;
+  STORIES.forEach((s) => {
+    const card = document.createElement("div");
+    card.className = "card";
+    if (s.foto) {
+      const img = document.createElement("img");
+      img.className = "card-capa";
+      img.src = s.foto;
+      img.alt = "Fotografia de " + s.nome;
+      img.loading = "lazy";
+      card.appendChild(img);
+    } else {
+      const ph = document.createElement("div");
+      ph.className = "card-capa-placeholder";
+      ph.setAttribute("aria-hidden", "true");
+      ph.textContent = "🐾";
+      card.appendChild(ph);
+    }
+    const h3 = document.createElement("h3");
+    h3.textContent = s.nome;
+    card.appendChild(h3);
+    const p = document.createElement("p");
+    p.textContent = s.texto;
+    card.appendChild(p);
+    historias.insertBefore(card, convite);
+  });
+}
+
+/* ---------- Dúvidas frequentes (faq.html) ---------- */
+// Listagem em cartões + página de dúvida via ?faq=id (link partilhável).
+
+function renderFaqDetail(container, f) {
+  const back = document.createElement("a");
+  back.className = "back-link";
+  back.href = "faq.html";
+  back.textContent = "← Todas as dúvidas";
+  container.appendChild(back);
+
+  // Mesmo layout da ficha do animal: galeria uniforme à esquerda, texto à direita
+  const temFotos = f.fotos && f.fotos.length > 0;
+  const detail = document.createElement("article");
+  detail.className = temFotos ? "animal-detail" : "faq-article";
+
+  if (temFotos) {
+    const gallery = document.createElement("div");
+    gallery.className = "detail-gallery";
+
+    function mainPhoto(i) {
+      const box = document.createElement("div");
+      box.className = "animal-photo zoomable";
+      box.setAttribute("role", "button");
+      box.setAttribute("aria-label", "Ampliar imagem de " + f.titulo);
+      box.tabIndex = 0;
+      const img = document.createElement("img");
+      img.src = f.fotos[i];
+      img.alt = f.titulo + " — imagem " + (i + 1) + " de " + f.fotos.length;
+      box.appendChild(img);
+      const zoom = () => openLightbox(f.fotos, i, f.titulo);
+      box.addEventListener("click", zoom);
+      box.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          zoom();
+        }
+      });
+      return box;
+    }
+
+    gallery.appendChild(mainPhoto(0));
+    if (f.fotos.length > 1) {
+      const thumbs = document.createElement("div");
+      thumbs.className = "detail-thumbs";
+      f.fotos.forEach((src, i) => {
+        const btn = document.createElement("button");
+        btn.setAttribute("aria-label", "Ver imagem " + (i + 1) + " de " + f.fotos.length);
+        const img = document.createElement("img");
+        img.src = src;
+        img.alt = "";
+        btn.appendChild(img);
+        btn.addEventListener("click", () => {
+          gallery.replaceChild(mainPhoto(i), gallery.firstChild);
+        });
+        thumbs.appendChild(btn);
+      });
+      gallery.appendChild(thumbs);
+    }
+    detail.appendChild(gallery);
+  }
+
+  const info = document.createElement("div");
+  info.className = "detail-info";
+
+  const h1 = document.createElement("h1");
+  h1.textContent = f.titulo;
+  info.appendChild(h1);
+
+  // corpo: parágrafos separados por \n\n; "# " vira subtítulo; linhas "- " viram lista
+  f.corpo.split("\n\n").forEach((bloco) => {
+    const linhas = bloco.split("\n");
+    if (bloco.startsWith("# ")) {
+      const h2 = document.createElement("h2");
+      h2.textContent = bloco.slice(2);
+      info.appendChild(h2);
+    } else if (linhas.every((l) => l.startsWith("- "))) {
+      const ul = document.createElement("ul");
+      linhas.forEach((l) => {
+        const li = document.createElement("li");
+        li.textContent = l.slice(2);
+        ul.appendChild(li);
+      });
+      info.appendChild(ul);
+    } else {
+      const p = document.createElement("p");
+      p.textContent = bloco;
+      info.appendChild(p);
+    }
+  });
+
+  // Partilhar: Web Share quando disponível; senão, copiar o link
+  const share = document.createElement("button");
+  share.className = "btn btn-secondary";
+  share.textContent = "Partilhar esta dúvida";
+  const shareData = { title: f.titulo, url: location.href };
+  const canWebShare =
+    /^https?:$/.test(location.protocol) &&
+    typeof navigator.share === "function" &&
+    (typeof navigator.canShare !== "function" || navigator.canShare(shareData));
+  if (canWebShare) {
+    share.addEventListener("click", () => navigator.share(shareData).catch(() => {}));
+  } else {
+    share.setAttribute("data-copy", location.href);
+    share.setAttribute("data-copy-label", "Link copiado");
+  }
+  const shareRow = document.createElement("p");
+  shareRow.className = "faq-share";
+  shareRow.appendChild(share);
+  info.appendChild(shareRow);
+
+  detail.appendChild(info);
+  container.appendChild(detail);
+}
+
+function faqCard(f) {
+  const card = document.createElement("div");
+  card.className = "card";
+  const url = "faq.html?faq=" + encodeURIComponent(f.id);
+
+  if (f.fotos && f.fotos.length) {
+    const capaLink = document.createElement("a");
+    capaLink.href = url;
+    capaLink.tabIndex = -1;
+    capaLink.setAttribute("aria-hidden", "true");
+    const img = document.createElement("img");
+    img.className = "card-capa";
+    img.src = f.fotos[0];
+    img.alt = "";
+    img.loading = "lazy";
+    capaLink.appendChild(img);
+    card.appendChild(capaLink);
+  }
+
+  const h3 = document.createElement("h3");
+  const titleLink = document.createElement("a");
+  titleLink.href = url;
+  titleLink.textContent = f.titulo;
+  h3.appendChild(titleLink);
+  card.appendChild(h3);
+
+  const p = document.createElement("p");
+  p.textContent = f.resumo;
+  card.appendChild(p);
+
+  const mais = document.createElement("a");
+  mais.href = url;
+  mais.textContent = "Ler resposta →";
+  card.appendChild(mais);
+
+  return card;
+}
+
+const faqDetailContainer = document.getElementById("faq-detail");
+const faqListing = document.getElementById("faq-listing");
+const faqGrid = document.getElementById("faq-grid");
+const faqId = params.get("faq");
+const selectedFaq =
+  faqId && typeof FAQS !== "undefined" ? FAQS.find((f) => f.id === faqId) : null;
+
+if (selectedFaq && faqDetailContainer) {
+  if (faqListing) faqListing.hidden = true;
+  renderFaqDetail(faqDetailContainer, selectedFaq);
+  document.title = selectedFaq.titulo + " — Causas de Caudas";
+} else if (faqGrid && typeof FAQS !== "undefined") {
+  FAQS.forEach((f) => faqGrid.appendChild(faqCard(f)));
 }
 
 /* ---------- Formulários via mailto ---------- */

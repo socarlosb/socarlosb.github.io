@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sobre nós — Causas de Caudas</title>
-  <meta name="description" content="A Causas de Caudas é uma associação de proteção animal 100% voluntária do Porto: esterilização (CED), tratamento, adoção e educação." />
+  <title>Dúvidas frequentes sobre animais — Causas de Caudas</title>
+  <meta name="description" content="Conteúdos educativos da Causas de Caudas: alergia ao gato, microchip, esterilização, idade do gato, cuidados no frio e no calor, e mais." />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
 </head>
@@ -19,8 +19,8 @@
         <li><a href="index.html">Início</a></li>
         <li><a href="animais.html">Animais</a></li>
         <li><a href="ajudar.html">Como ajudar</a></li>
-        <li><a href="sobre.html" aria-current="page">Sobre nós</a></li>
-        <li><a href="faq.html">Dúvidas</a></li>
+        <li><a href="sobre.html">Sobre nós</a></li>
+        <li><a href="faq.html" aria-current="page">Dúvidas</a></li>
         <li><a href="contactos.html">Contactos</a></li>
         <li><a class="btn" href="ajudar.html#donativos">Doar</a></li>
       </ul>
@@ -38,52 +38,16 @@
 <main>
   <section>
     <div class="container">
-      <h1>Sobre nós</h1>
+      <div id="faq-detail"></div>
 
-      <div class="help-section">
-        <h2>Quem somos</h2>
-        <!-- TODO: rever/enriquecer com o texto institucional do site antigo antes de o desligar -->
-        <p>A Causas de Caudas é uma associação de proteção animal do Porto, sem fins lucrativos, com
-           intervenção nos concelhos limítrofes, fundada a 11 de maio de 2016 — há mais de uma década
-           que é gerida exclusivamente por voluntários.
-           Dedicamo-nos à esterilização, tratamento e adoção de animais de rua, e à educação para o
-           bem-estar animal.</p>
-        <p>Os nossos valores: <strong>transparência</strong>, <strong>rigor</strong> e
-           <strong>cooperação local</strong> com outras associações, clínicas e a comunidade.</p>
+      <div id="faq-listing">
+        <h1>Dúvidas frequentes</h1>
+        <p>Conteúdos educativos preparados pela associação sobre gatos, cães e bem-estar animal.
+           Não encontrou a resposta? Escreva-nos para
+           <a href="mailto:geral@causasdecaudas.org">geral@causasdecaudas.org</a>.</p>
+
+        <div class="cards cards-2" id="faq-grid"></div>
       </div>
-
-      <div class="help-section" id="ced">
-        <h2>O nosso trabalho</h2>
-        <p><strong>Método CED — Capturar, Esterilizar, Devolver.</strong> É a forma comprovada e humana de
-           controlar as colónias de gatos de rua: os animais são capturados, esterilizados e devolvidos ao
-           seu território, onde são alimentados e vigiados. As crias e os animais sociáveis entram no
-           circuito de adoção.</p>
-        <ul>
-          <li>Esterilização de canídeos (<span data-stat="esterilizacoesCanideos">+110</span>) e felídeos (<span data-stat="esterilizacoesFelideos">+5000</span>)</li>
-          <li>Tratamentos veterinários a animais de rua</li>
-          <li>Adoções responsáveis, com contrato e acompanhamento (<span data-stat="adocoes">+600</span> até hoje)</li>
-          <li>Apoio a 6 colónias de rua no Porto e em Matosinhos</li>
-          <li>Educação e sensibilização</li>
-        </ul>
-      </div>
-
-      <div class="help-section">
-        <h2>Como funcionamos</h2>
-        <p>Não temos abrigo nem instalações abertas ao público. Temos um pequeno espaço para gatos
-           em situação temporária (4 a 5 no máximo) e uma rede de
-           <a href="ajudar.html#fat">famílias de acolhimento temporário</a> — é por isso que as FAT
-           são tão importantes para nós. Todos os contactos e visitas são feitos por marcação.</p>
-      </div>
-
-      <div class="help-section">
-        <h2>Parceiros e amigos</h2>
-        <p><strong>Parceiros</strong> — empresas e instituições que apoiam o nosso trabalho:</p>
-        <div class="logo-grid" data-partners="parceiro"></div>
-        <p><strong>Associações amigas</strong> — grupos e iniciativas com quem colaboramos:</p>
-        <div class="logo-grid" data-partners="amigo"></div>
-        <p>A sua empresa quer ajudar? <a href="mailto:geral@causasdecaudas.org?subject=Parceria">Fale connosco</a>.</p>
-      </div>
-
     </div>
   </section>
 </main>
@@ -124,7 +88,7 @@
 
 <script src="data/animals.js"></script>
 <script src="data/stats.js"></script>
-<script src="data/partners.js"></script>
+<script src="data/faqs.js"></script>
 <script src="script.js"></script>
 </body>
 </html>
