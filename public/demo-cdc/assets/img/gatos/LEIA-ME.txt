@@ -1,0 +1,12 @@
+Pasta para as fotos dos gatos.
+
+Convenção de nomes: nome do gato em minúsculas, sem acentos, com número se houver várias fotos.
+  joao-1.jpg
+  joao-2.jpg
+  easy-1.jpg
+
+Depois de colocar as fotos aqui, indicar os caminhos no ficheiro data/animals.js
+(a primeira da lista é a que aparece no cartão; as restantes entram na galeria da ficha):
+  fotos: ["assets/img/gatos/joao-1.jpg", "assets/img/gatos/joao-2.jpg"]
+
+Dica: redimensionar as fotos antes de as colocar (máx. ~1200px de largura) para o site carregar rápido.
