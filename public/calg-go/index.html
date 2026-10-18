@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ir eu ou pedir?</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232563eb'/%3E%3Cpath d='M32 10c-9.4 0-17 7.4-17 16.5 0 11.5 17 27.5 17 27.5s17-16 17-27.5C49 17.400 41.400 10 32 10z' fill='white'/%3E%3Ccircle cx='32' cy='26.500' r='9' fill='%232563eb'/%3E%3Cpath d='M36.500 22.500a6 6 0 1 0 0 8M26 25h8M26 28.500h8' fill='none' stroke='white' stroke-width='2.400' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #f5f6f8; --card: #fff; --text: #1c2330; --muted: #5b6574;
+    --line: #dde1e8; --accent: #2563eb; --good: #15803d; --good-bg: #dcfce7;
+    --warn: #b45309; --warn-bg: #fef3c7; --hover: #eef1f6;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #12151c; --card: #1b2029; --text: #e8ebf1; --muted: #9aa4b5;
+      --line: #2e3542; --accent: #6b9bff; --good: #4ade80; --good-bg: #12301f;
+      --warn: #fbbf24; --warn-bg: #3a2c0c; --hover: #232a36;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 24px 16px 48px; background: var(--bg); color: var(--text);
+    font: 16px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif;
+    -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+  }
+  main { max-width: 760px; margin: 0 auto; }
+  h1 { font-size: 1.6rem; margin: 0 0 4px; text-wrap: balance; }
+  .sub { color: var(--muted); margin: 0 0 20px; text-wrap: pretty; }
+
+  form { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; align-items: start; }
+  @media (max-width: 640px) { form { grid-template-columns: 1fr; } }
+
+  details.group {
+    background: var(--card); border: 1px solid var(--line); border-radius: 12px; min-width: 0;
+  }
+  summary {
+    display: flex; align-items: center; gap: 8px; min-height: 48px; padding: 8px 16px;
+    cursor: pointer; list-style: none; border-radius: 11px; font-weight: 600;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::before {
+    content: ""; width: 8px; height: 8px; flex: none; margin-right: 4px;
+    border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted);
+    transform: rotate(-45deg);
+  }
+  details[open] > summary::before { transform: rotate(45deg); }
+  @media (prefers-reduced-motion: no-preference) {
+    summary::before { transition: transform 150ms ease-out; }
+  }
+  @media (hover: hover) { summary:hover { background: var(--hover); } }
+  summary:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  summary .badge {
+    margin-left: auto; font-weight: 500; color: var(--muted); white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .body { padding: 4px 16px 16px; display: grid; gap: 12px; }
+  .pair { display: grid; gap: 12px; grid-template-columns: 1fr 1fr; }
+
+  label { display: block; font-size: .875rem; color: var(--muted); }
+  input[type=number] {
+    display: block; width: 100%; min-height: 44px; margin-top: 4px; padding: 8px 10px;
+    font: inherit; color: var(--text); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 8px;
+  }
+  select, .presets button {
+    min-height: 44px; font: inherit; color: var(--text); background: var(--bg);
+    border: 1px solid var(--line); border-radius: 8px;
+  }
+  select { display: block; width: 100%; margin-top: 4px; padding: 8px 10px; }
+  .presets { display: grid; gap: 8px; grid-template-columns: 1fr auto auto; align-items: end; }
+  .presets button { width: 44px; padding: 0; display: grid; place-items: center; cursor: pointer; }
+  .ico {
+    width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2;
+    stroke-linecap: round; stroke-linejoin: round; pointer-events: none;
+  }
+  @media (hover: hover) { .presets button:hover { background: var(--hover); } }
+  .presets button:focus-visible, select:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .check {
+    display: flex; gap: 10px; align-items: center; min-height: 44px; color: var(--text);
+    font-size: 1rem; cursor: pointer;
+  }
+  .check input { width: 20px; height: 20px; margin: 0; accent-color: var(--accent); }
+  .hint { color: var(--muted); font-size: .78rem; margin-top: 2px; text-wrap: pretty; }
+
+  details.more { border-top: 1px solid var(--line); padding-top: 4px; }
+  details.more > summary {
+    min-height: 44px; padding: 8px 12px; margin: 0 -4px; border-radius: 8px;
+    font-weight: 500; color: var(--muted);
+  }
+  details.more > .body { padding: 4px 0 0; }
+
+  #result {
+    margin-top: 16px; background: var(--card); border: 1px solid var(--line);
+    border-radius: 12px; padding: 16px;
+  }
+  .verdict { border-radius: 8px; padding: 12px 14px; font-weight: 600; margin-bottom: 14px; text-wrap: balance; }
+  .verdict.good { background: var(--good-bg); color: var(--good); }
+  .verdict.warn { background: var(--warn-bg); color: var(--warn); }
+  .cols { display: grid; gap: 16px; grid-template-columns: 1fr 1fr; }
+  @media (max-width: 640px) { .cols { grid-template-columns: 1fr; } }
+  h2 { font-size: 1rem; margin: 0 0 6px; }
+  table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+  td { padding: 4px 0; }
+  td:last-child { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+  tr.total td { border-top: 1px solid var(--line); font-weight: 700; padding-top: 8px; }
+  .note { color: var(--muted); font-size: .85rem; margin: 14px 0 0; text-wrap: pretty; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-save" viewBox="0 0 24 24"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4a1 1 0 0 1 1-1h6a1 1 0 0 1 1 1v2M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6M10 11v6M14 11v6"/></symbol>
+</svg>
+<main>
+  <h1>Ir eu ou pedir?</h1>
+  <p class="sub">Estima quanto custa ires tu à loja e compara com um serviço de entrega (Glovo, Uber Eats, etc.).</p>
+
+  <form id="form" autocomplete="off">
+    <details class="group" id="g-self" open>
+      <summary>Ir eu <span class="badge" id="b-self"></span></summary>
+      <div class="body">
+        <div class="pair">
+          <label>Distância, só ida (km)
+            <input type="number" name="dist" inputmode="decimal" min="0" step="any" value="8">
+          </label>
+          <label>Viagem, só ida (min)
+            <input type="number" name="travel" inputmode="decimal" min="0" step="any" value="15">
+          </label>
+        </div>
+        <div class="pair">
+          <label>Tempo na loja (min)
+            <input type="number" name="shop" inputmode="decimal" min="0" step="any" value="20">
+          </label>
+          <label>Valor do teu tempo (€/h)
+            <input type="number" name="hourly" inputmode="decimal" min="0" step="any" value="8">
+          </label>
+        </div>
+        <label class="check"><input type="checkbox" name="round" checked> Contar ida e volta</label>
+
+        <details class="more" id="g-car">
+          <summary>Carro e extras</summary>
+          <div class="body">
+            <div class="presets">
+              <label>Carro guardado
+                <select name="carPreset"></select>
+              </label>
+              <button type="button" data-preset="car" data-action="save" aria-label="Guardar carro" title="Guardar"><svg class="ico"><use href="#i-save"/></svg></button>
+              <button type="button" data-preset="car" data-action="delete" aria-label="Eliminar carro" title="Eliminar"><svg class="ico"><use href="#i-trash"/></svg></button>
+            </div>
+            <div class="pair">
+              <label>Consumo (L/100 km)
+                <input type="number" name="cons" inputmode="decimal" min="0" step="any" value="6.5">
+              </label>
+              <label>Combustível (€/L)
+                <input type="number" name="fuel" inputmode="decimal" min="0" step="any" value="1.75">
+              </label>
+            </div>
+            <div class="hint">O consumo vem no computador de bordo. Elétrico: kWh/100 km e €/kWh.</div>
+            <div class="pair">
+              <label>Desgaste (€/km)
+                <input type="number" name="wear" inputmode="decimal" min="0" step="any" value="0.08">
+              </label>
+              <label>Parque e portagens (€)
+                <input type="number" name="park" inputmode="decimal" min="0" step="any" value="0">
+              </label>
+            </div>
+            <div class="hint">Desgaste: pneus, manutenção, depreciação. Põe 0 para ignorar.</div>
+          </div>
+        </details>
+      </div>
+    </details>
+
+    <details class="group" id="g-deliv" open>
+      <summary>Usar serviço de entrega <span class="badge" id="b-deliv"></span></summary>
+      <div class="body">
+        <div class="pair">
+          <label>Taxa de entrega (€)
+            <input type="number" name="delivery" inputmode="decimal" min="0" step="any" value="2.49">
+          </label>
+          <label>Gorjeta (€)
+            <input type="number" name="tip" inputmode="decimal" min="0" step="any" value="1">
+          </label>
+        </div>
+
+        <details class="more" id="g-fees">
+          <summary>Taxas e preços da app</summary>
+          <div class="body">
+            <div class="presets">
+              <label>App guardada
+                <select name="appPreset"></select>
+              </label>
+              <button type="button" data-preset="app" data-action="save" aria-label="Guardar app" title="Guardar"><svg class="ico"><use href="#i-save"/></svg></button>
+              <button type="button" data-preset="app" data-action="delete" aria-label="Eliminar app" title="Eliminar"><svg class="ico"><use href="#i-trash"/></svg></button>
+            </div>
+            <div class="pair">
+              <label>Taxa de serviço (€)
+                <input type="number" name="service" inputmode="decimal" min="0" step="any" value="1">
+              </label>
+              <label>Valor da compra (€)
+                <input type="number" name="basket" inputmode="decimal" min="0" step="any" value="25">
+              </label>
+            </div>
+            <label>Sobrecusto nos preços da app (%)
+              <input type="number" name="markup" inputmode="decimal" min="0" step="any" value="10">
+              <div class="hint">Muitas apps cobram mais caro que na loja.</div>
+            </label>
+          </div>
+        </details>
+      </div>
+    </details>
+  </form>
+
+  <section id="result" role="status"></section>
+</main>
+
+<script>
+  const form = document.getElementById('form');
+  const out = document.getElementById('result');
+  const eur = n => n.toLocaleString('pt-PT', { style: 'currency', currency: 'EUR' });
+  const row = (label, v, cls = '') => `<tr class="${cls}"><td>${label}</td><td>${eur(v)}</td></tr>`;
+  const KEY = 'calcu-go';
+
+  function val(name) {
+    const v = parseFloat(form.elements[name].value);
+    return Number.isFinite(v) && v >= 0 ? v : 0;
+  }
+
+  function calc() {
+    const trips = form.elements.round.checked ? 2 : 1;
+    const km = val('dist') * trips;
+    const hours = (val('travel') * trips + val('shop')) / 60;
+
+    const fuel = km * val('cons') / 100 * val('fuel');
+    const wear = km * val('wear');
+    const park = val('park');
+    const time = hours * val('hourly');
+    const self = fuel + wear + park + time;
+    const selfMoney = fuel + wear + park;
+
+    const markup = val('basket') * val('markup') / 100;
+    const deliv = val('delivery') + val('service') + val('tip') + markup;
+
+    const diff = Math.abs(self - deliv);
+    const cheaperSelf = self < deliv;
+    const verdict = cheaperSelf
+      ? `Compensa mais ir tu: poupas cerca de ${eur(diff)}.`
+      : `Compensa mais pedir: poupas cerca de ${eur(diff)}.`;
+
+    // Valor/hora a partir do qual pedir passa a compensar
+    let breakeven = '';
+    if (hours > 0) {
+      const be = (deliv - selfMoney) / hours;
+      breakeven = be <= 0
+        ? 'Mesmo sem contar o teu tempo, ir tu sai mais caro.'
+        : `Pedir compensa se o teu tempo valer mais de ${eur(be)}/h.`;
+    }
+
+    document.getElementById('b-self').textContent = eur(self);
+    document.getElementById('b-deliv').textContent = eur(deliv);
+
+    out.innerHTML = `
+      <div class="verdict ${cheaperSelf ? 'good' : 'warn'}">${verdict}</div>
+      <div class="cols">
+        <div>
+          <h2>Ir eu (${km.toLocaleString('pt-PT', { maximumFractionDigits: 1 })} km, ${Math.round(hours * 60)} min)</h2>
+          <table>
+            ${row('Combustível', fuel)}
+            ${row('Desgaste', wear)}
+            ${row('Estacionamento / portagens', park)}
+            ${row('Valor do tempo', time)}
+            ${row('Total', self, 'total')}
+          </table>
+        </div>
+        <div>
+          <h2>Entrega</h2>
+          <table>
+            ${row('Taxa de entrega', val('delivery'))}
+            ${row('Taxa de serviço', val('service'))}
+            ${row('Gorjeta', val('tip'))}
+            ${row('Sobrecusto nos preços', markup)}
+            ${row('Total extra', deliv, 'total')}
+          </table>
+        </div>
+      </div>
+      <p class="note">${breakeven} Não inclui o preço dos produtos em si, só o custo extra de os obter.</p>`;
+  }
+
+  function save() {
+    try {
+      const data = { values: {}, open: {} };
+      for (const e of form.elements) if (e.name) data.values[e.name] = e.type === 'checkbox' ? e.checked : e.value;
+      form.querySelectorAll('details[id]').forEach(d => data.open[d.id] = d.open);
+      localStorage.setItem(KEY, JSON.stringify(data));
+    } catch {}
+  }
+
+  // Carros e apps guardados: cada perfil é um conjunto de campos com nome.
+  const PKEY = 'calcu-go-presets';
+  const PRESETS = {
+    car: { select: 'carPreset', fields: ['cons', 'fuel', 'wear'], what: 'carro' },
+    app: { select: 'appPreset', fields: ['delivery', 'service', 'tip', 'markup'], what: 'app' },
+  };
+  let store = { car: {}, app: {} };
+  try { store = { ...store, ...JSON.parse(localStorage.getItem(PKEY) || '{}') }; } catch {}
+
+  function renderPresets(type) {
+    const sel = form.elements[PRESETS[type].select];
+    sel.replaceChildren(new Option('Personalizado', ''),
+      ...Object.keys(store[type]).sort().map(n => new Option(n, n)));
+  }
+
+  function persistPresets() {
+    try { localStorage.setItem(PKEY, JSON.stringify(store)); } catch {}
+  }
+
+  function applyPreset(type) {
+    const p = store[type][form.elements[PRESETS[type].select].value];
+    if (!p) return;
+    for (const f of PRESETS[type].fields) form.elements[f].value = p[f];
+  }
+
+  form.addEventListener('click', e => {
+    const btn = e.target.closest('button[data-preset]');
+    if (!btn) return;
+    const type = btn.dataset.preset;
+    const { select, fields, what } = PRESETS[type];
+    const sel = form.elements[select];
+    if (btn.dataset.action === 'save') {
+      const name = (prompt(`Nome do ${what}:`, sel.value) || '').trim();
+      if (!name) return;
+      store[type][name] = Object.fromEntries(fields.map(f => [f, form.elements[f].value]));
+      persistPresets(); renderPresets(type); sel.value = name;
+    } else if (sel.value && confirm(`Eliminar "${sel.value}"?`)) {
+      delete store[type][sel.value];
+      persistPresets(); renderPresets(type);
+    }
+    calc(); save();
+  });
+
+  for (const [type, { select }] of Object.entries(PRESETS)) {
+    renderPresets(type);
+    form.elements[select].addEventListener('change', () => { applyPreset(type); calc(); save(); });
+  }
+
+  try {
+    const saved = JSON.parse(localStorage.getItem(KEY) || '{}');
+    for (const [k, v] of Object.entries(saved.values || {})) {
+      const el = form.elements[k];
+      if (!el) continue;
+      if (el.type === 'checkbox') el.checked = !!v; else el.value = v;
+    }
+    for (const [id, open] of Object.entries(saved.open || {})) {
+      const d = document.getElementById(id);
+      if (d) d.open = !!open;
+    }
+  } catch {}
+
+  form.addEventListener('input', e => {
+    // Editar à mão um campo de um perfil volta a "Personalizado".
+    for (const { select, fields } of Object.values(PRESETS)) {
+      if (fields.includes(e.target.name)) form.elements[select].value = '';
+    }
+    calc(); save();
+  });
+  form.querySelectorAll('details[id]').forEach(d => d.addEventListener('toggle', save));
+  form.addEventListener('submit', e => e.preventDefault());
+  calc();
+</script>
+</body>
+</html>
